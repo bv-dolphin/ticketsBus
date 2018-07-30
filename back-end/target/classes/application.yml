@@ -1,0 +1,64 @@
+spring:
+  messages:
+    basename: translations
+  jackson:
+    serialization:
+     write_dates_as_timestamps: false
+  profiles:
+    active: test
+logging:
+  level:
+    ROOT: INFO
+  
+---
+
+spring:
+  profiles: dev
+  jpa:
+    hibernate:
+        ddl-auto: validate
+    properties.hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect #https://stackoverflow.com/questions/49680199/java-lang-reflect-invocationtargetexception-null
+        temp.use_jdbc_metadata_defaults: false
+        show_sql: true
+        format_sql: true
+        enable_lazy_load_no_trans: true #If you would like to keep Lazy Load and you are using Spring Boot
+  datasource:
+      driverClassName: org.h2.Driver
+      url: jdbc:h2:mem:test;MODE=PostgreSQL;DB_CLOSE_ON_EXIT=FALSE
+      username: sa
+      password:
+#Monitoring
+  management:
+    endpoints:
+      web:
+        exposure:
+          include:
+            - beans
+            - health
+            - metrics
+            - env
+---
+spring:
+  profiles: test
+  flyway:
+    enabled: false
+
+---
+spring:
+  profiles: test
+  jpa:
+     hibernate:
+      ddl-auto: create
+     properties.hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        show_sql: true
+        format_sql: true
+     database-platform: H2
+  flyway:
+    enabled: false
+  datasource:
+      driverClassName: org.h2.Driver
+      url: jdbc:h2:mem:test;MODE=PostgreSQL;DB_CLOSE_ON_EXIT=FALSE
+      username: sa
+      password:
