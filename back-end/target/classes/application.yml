@@ -8,7 +8,7 @@ spring:
     active: test
 logging:
   level:
-    ROOT: INFO
+    ROOT: INFOgit
   
 ---
 

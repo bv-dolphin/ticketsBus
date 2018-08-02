@@ -1,4 +1,4 @@
-package com.javabrazzers.domain;
+package com.osprey.studio.domain;
 
 public class BusLanding {
 

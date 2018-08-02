@@ -1,6 +1,6 @@
-package com.javabrazzers.domain;
+package com.osprey.studio.domain;
 
-import com.javabrazzers.domain.BaseEntity;
+import com.osprey.studio.domain.BaseEntity;
 
 public class BusStation extends BaseEntity {
 

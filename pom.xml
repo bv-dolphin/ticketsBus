@@ -3,11 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.bus</groupId>
+    <groupId>com.osprey.studio</groupId>
     <artifactId>bus</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>back-end</module>
+        <module>database</module>
+        <module>service</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -27,6 +29,7 @@
         <java.version>1.8</java.version>
         <swagger2.version>2.8.0</swagger2.version>
         <guava.version>24.0-jre</guava.version>
+        <project.version>1.9</project.version>
     </properties>
 
 </project>
