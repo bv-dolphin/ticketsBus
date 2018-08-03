@@ -16,12 +16,14 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @NoArgsConstructor
 public class City extends BaseEntity {
-	@NotBlank(message = "error.city.cityname.isnull")
-	@Size(min = 3, max = 100, message = "errors.city.cityName.value.size")
-	@Column(name = "city", nullable = false, length = 50,unique = true)
-	private String cityName;
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "region_id")
-	private Region region;
+
+    @NotBlank(message = "error.city.cityname.isnull")
+    @Size(min = 3, max = 100, message = "errors.city.cityName.value.size")
+    @Column(name = "city", nullable = false, length = 50, unique = true)
+    private String cityName;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "region_id")
+    private Region region;
 
 }

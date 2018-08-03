@@ -52,11 +52,11 @@ public abstract class AbstractBaseService<E extends BaseEntity> implements BaseS
         logger.info("start create");
 
         // Ensure the entity object to be created does NOT exist in the repository.
-        if (entity.getId() != null) {
-            // Cannot create Entity with specified ID value
-            logger.error("Attempted to create a Entity, id is not null, so, this entity exist.");
-            throw new EntityExistsException("The id attribute must be null to persist a new entity.");
-        }
+//        if (entity.getId() != null) {
+//            // Cannot create Entity with specified ID value
+//            logger.error("Attempted to create a Entity, id is not null, so, this entity exist.");
+//            throw new EntityExistsException("The id attribute must be null to persist a new entity.");
+//        }
 
         E savedObj = getRepository().save(entity);
 
@@ -74,18 +74,18 @@ public abstract class AbstractBaseService<E extends BaseEntity> implements BaseS
     @Override
     public E update(E entity) {
 
-        logger.info("update id:", entity.getId());
+//        logger.info("update id:", entity.getId());
 
         if(entity == null) {
             logger.error("Entity can not be null.");
             throw new NoResultException("Requested entity not found.");
         }
-        if(entity.getId() == null) {
-            logger.error("ID can not be null.");
-            throw new NoResultException("Requested entity not found.");
-        }
-
-        logger.info("update id:", entity.getId());
+//        if(entity.getId() == null) {
+//            logger.error("ID can not be null.");
+//            throw new NoResultException("Requested entity not found.");
+//        }
+//
+//        logger.info("update id:", entity.getId());
 
         return getRepository().save(entity);
 

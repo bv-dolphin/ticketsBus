@@ -6,15 +6,13 @@
     <groupId>com.osprey.studio</groupId>
     <artifactId>bus</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <modules>
-        <module>back-end</module>
-        <module>database</module>
-        <module>service</module>
-    </modules>
     <packaging>pom</packaging>
-
     <name>bus</name>
     <description>Demo project for Spring Boot</description>
+
+    <modules>
+        <module>back-end</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

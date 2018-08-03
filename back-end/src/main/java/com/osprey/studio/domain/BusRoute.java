@@ -28,10 +28,10 @@ public class BusRoute extends BaseEntity {
     @Column(name = "km", nullable = true, length = 10, unique = false)
 	private Integer km;
 
-
 	@ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "bus_flight_id")
 	private BusFlight busFlight;
+
 	@ManyToOne
     @JoinColumn(name = "bus_station_id")
 	private BusStation busStation;

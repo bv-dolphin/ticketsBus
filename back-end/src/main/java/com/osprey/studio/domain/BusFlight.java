@@ -24,6 +24,7 @@ public class BusFlight extends BaseEntity {
     @Size(min = 1, max = 10, message = "errors.busflight.value.max")
     @Column(name = "flight_number", nullable = false, length = 10,unique = true)
 	private String flightNumber;
+
     @NotNull
     @Size(min = 3, max = 100, message = "errors.busflight.value.max")
     @Column(name = "flight_name", nullable = false, length = 255,unique = true)

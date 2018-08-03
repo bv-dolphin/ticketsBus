@@ -27,28 +27,28 @@ public class User extends BaseEntity implements UserDetails {
     @Size(min = 2, max = 20, message = "errors.user.firstname.value.size")
     @Column(name = "fist_name", nullable = false, length = 20, unique = true)     //unique уникальное значение
     private String firstName;
+
     @NotBlank
     @Size(min = 2, max = 20, message = "errors.user.lastname.value.size")
     @Column(name = "last_name", nullable = false, length = 20, unique = true)
     private String lastName;
+
     @NotBlank
     @Size(min = 6, max = 20, message = "errors.user.password.value.size")
     @Column(name = "password", nullable = false, length = 20, unique = true)
     private String password;
-    @NotBlank
-    @Email
-    @Size(min = 2, max = 30, message = "errors.user.email.value.size")
+
+
+    @Email(message = "errors.user.email.value.email_not_correct")
+    @NotBlank(message = "errors.user.email.value.empty")
     @Column(name = "email", nullable = false, length = 30, unique = true)
     private String email;
-    private boolean active;
 
-    @ManyToMany(mappedBy = "roles")
-    private Set<User> users = new HashSet<>();
+    private boolean active;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user2roles_tbl", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
-    @ManyToMany(mappedBy = "users")
     private Set<Role> roles = new HashSet<>();
 
 
@@ -58,7 +58,7 @@ public class User extends BaseEntity implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return roles;
+        return getRoles();
     }
 
     @Override
@@ -88,7 +88,7 @@ public class User extends BaseEntity implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return active;
+        return isActive();
     }
 
 

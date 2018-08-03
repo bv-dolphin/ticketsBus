@@ -1,4 +1,4 @@
-package com.osprey.studio.domain;
+package com.osprey.studio.domain.enums;
 
 import org.springframework.security.core.GrantedAuthority;
 

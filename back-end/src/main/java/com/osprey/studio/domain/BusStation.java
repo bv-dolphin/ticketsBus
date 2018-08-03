@@ -20,22 +20,23 @@ public class BusStation extends BaseEntity {
 
     @NotNull
     @Size(min = 3, max = 100, message = "errors.busstation.value.max")
-    @Column(name = "bus_station_name", nullable = false, length = 255,unique = true)
+    @Column(name = "bus_station_name", nullable = false, length = 255, unique = true)
     private String busStationName;
 
     @Size(min = 3, max = 100, message = "errors.busstation.value.max")
-    @Column(name = "street_name", nullable = true, length = 255,unique = false)
+    @Column(name = "street_name", nullable = true, length = 255, unique = false)
     private String streetName;
+
     @Size(min = 3, max = 100, message = "errors.busstation.value.max")
-    @Column(name = "latitude", nullable = true, length = 255,unique = false)
+    @Column(name = "latitude", nullable = true, length = 255, unique = false)
     private String latitude;
+
     @Size(min = 3, max = 100, message = "errors.busstation.value.max")
-    @Column(name = "longitude", nullable = true, length = 255,unique = false)
+    @Column(name = "longitude", nullable = true, length = 255, unique = false)
     private String longitude;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "city_id")
-
     private City city;
 
 }

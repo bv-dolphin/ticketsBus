@@ -16,10 +16,12 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Region extends BaseEntity {
+
 	@NotBlank(message = "error.region.regionname.isnull")
 	@Size(min = 3, max = 50, message = "errors.region.regionName.value.size")
 	@Column(name = "region", nullable = false, length = 50,unique = true)
 	private String regionName;
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "country_id")
 	private Country country;
