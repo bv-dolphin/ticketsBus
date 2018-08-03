@@ -12,8 +12,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.Collection;
-import java.util.Set;
+import java.util.*;
 
 
 @Getter
@@ -41,14 +40,17 @@ public class User extends BaseEntity implements UserDetails {
     @Size(min = 2, max = 30, message = "errors.user.email.value.size")
     @Column(name = "email", nullable = false, length = 30, unique = true)
     private String email;
-
     private boolean active;
+
+    @ManyToMany(mappedBy = "roles")
+    private Set<User> users = new HashSet<>();
+
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    //создает в базе необходимую таблицу и колонку.
     @CollectionTable(name = "user2roles_tbl", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
-    @ManyToMany(mappedBy = "user_id")
-    private Set<Role> roles;
+    @ManyToMany(mappedBy = "users")
+    private Set<Role> roles = new HashSet<>();
+
 
     public boolean isAdmin(){
         return roles.contains(Role.ADMIN);
@@ -88,4 +90,6 @@ public class User extends BaseEntity implements UserDetails {
     public boolean isEnabled() {
         return active;
     }
+
+
 }

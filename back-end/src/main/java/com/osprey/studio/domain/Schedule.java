@@ -21,11 +21,12 @@ public class Schedule extends BaseEntity {
 	@Column(name = "depature_date", nullable = false, length = 255,unique = true)
 	private LocalDateTime departureDate;
 
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "bus_route_id")
 	private BusRoute busRoute;
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "bus_id", cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "bus_id")
 	private Bus Bus;
 
 }

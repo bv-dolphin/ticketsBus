@@ -34,7 +34,7 @@ public class BusStation extends BaseEntity {
     private String longitude;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "city_tbl")
+    @JoinColumn(name = "city_id")
 
     private City city;
 

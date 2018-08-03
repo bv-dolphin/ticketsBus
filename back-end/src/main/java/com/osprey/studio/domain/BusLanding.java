@@ -21,11 +21,13 @@ public class BusLanding extends BaseEntity {
 	@Size(min = 3, max = 100, message = "errors.buslanding.value.max")
 	@Column(name = "place_number", nullable = false, length = 255,unique = true)
 	private int placeNumber;
-	@Size(min = 3, max = 100, message = "errors.buslanding.value.max")
-	@Column(name = "schedule_id", nullable = false, length = 255,unique = true)
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "schedule_id")
 	private Schedule schedule;
-	@OneToOne
+
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "ticket_id")
-	private int ticket;
+	private Ticket ticket;
 
 }

@@ -29,9 +29,11 @@ public class BusRoute extends BaseEntity {
 	private Integer km;
 
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "bus_flight_id")
 	private BusFlight busFlight;
-	@OneToMany
+	@ManyToOne
+    @JoinColumn(name = "bus_station_id")
 	private BusStation busStation;
 
 }

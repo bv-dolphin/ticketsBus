@@ -21,7 +21,7 @@ public class City extends BaseEntity {
 	@Column(name = "city", nullable = false, length = 50,unique = true)
 	private String cityName;
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "region_tbl")
+	@JoinColumn(name = "region_id")
 	private Region region;
 
 }
