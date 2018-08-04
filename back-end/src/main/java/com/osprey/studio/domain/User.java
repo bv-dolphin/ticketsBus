@@ -20,6 +20,7 @@ import java.util.Set;
                 @UniqueConstraint(columnNames = "email", name = "email_unique")})
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @ToString(callSuper = true)
 public class User extends BaseEntity implements UserDetails {
 
