@@ -1,28 +1,34 @@
 package com.osprey.studio.domain;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+import static com.osprey.studio.domain.User.BUN_NULL;
+
 @Getter
 @Setter
-@Table(name = "token_tbl")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@ToString(callSuper = true)
+@Entity
+@Table(name = "token_tbl",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = {"session", "user_id"}, name = "token_unique"),
+                @UniqueConstraint(columnNames = "session", name = "session_unique")})
 public class Token extends BaseEntity {
+    public static final int LENGTH = 100;
 
-    @NotNull
-    @Column(name = "session", nullable = false, length = 255, unique = true)
+    @NotNull(message = "errors.token.token-session.not-null")
+    @Column(name = "session", nullable = false, length = LENGTH)
     private String tokenSession;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", referencedColumnName = "id",
+    foreignKey = @ForeignKey(name = "token_users_fk"))
     private User user;
 
 }

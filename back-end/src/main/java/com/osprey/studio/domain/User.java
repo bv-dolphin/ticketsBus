@@ -14,14 +14,14 @@ import java.util.Set;
 
 @Getter
 @Setter
-@Entity
-@Table(name = "users_tbl",
-        uniqueConstraints = {
-                @UniqueConstraint(columnNames = "email", name = "email_unique")})
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @ToString(callSuper = true)
+@Entity
+@Table(name = "users_tbl",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = "email", name = "email_unique")})
 public class User extends BaseEntity implements UserDetails {
 
     public static final boolean BUN_NULL = false;
