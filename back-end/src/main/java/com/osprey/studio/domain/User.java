@@ -1,58 +1,62 @@
 package com.osprey.studio.domain;
 
-import com.osprey.studio.domain.BaseEntity;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.osprey.studio.domain.enums.Role;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Getter
 @Setter
 @Entity
-@Table(name = "user_tbl")
+@Table(name = "users_tbl",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = "email", name = "email_unique")})
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString(callSuper = true)
 public class User extends BaseEntity implements UserDetails {
 
-    @NotBlank
-    @Size(min = 2, max = 20, message = "errors.user.firstname.value.size")
-    @Column(name = "fist_name", nullable = false, length = 20, unique = true)     //unique уникальное значение
+    public static final boolean BUN_NULL = false;
+    public static final int LENGTH = 100;
+
+    @NotBlank(message = "errors.user.firstname.not-null")
+    @Column(name = "fist_name", nullable = BUN_NULL, length = LENGTH)
     private String firstName;
 
-    @NotBlank
-    @Size(min = 2, max = 20, message = "errors.user.lastname.value.size")
-    @Column(name = "last_name", nullable = false, length = 20, unique = true)
+    @NotBlank(message = "errors.user.last-name.not-null")
+    @Column(name = "last_name", nullable = BUN_NULL, length = LENGTH)
     private String lastName;
 
-    @NotBlank
-    @Size(min = 6, max = 20, message = "errors.user.password.value.size")
-    @Column(name = "password", nullable = false, length = 20, unique = true)
+    @NotBlank(message = "errors.user.password.not-null")
+    @Column(name = "password", nullable = BUN_NULL, length = LENGTH)
     private String password;
 
-
     @Email(message = "errors.user.email.value.email_not_correct")
-    @NotBlank(message = "errors.user.email.value.empty")
-    @Column(name = "email", nullable = false, length = 30, unique = true)
+    @Column(name = "email", nullable = BUN_NULL, length = LENGTH) //unique уникальное значение
     private String email;
 
-    private boolean active;
+    @Column(name = "active")
+    private Boolean active;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user2roles_tbl", joinColumns = @JoinColumn(name = "user_id"))
+    @CollectionTable(name = "user2roles_tbl",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = BUN_NULL),
+            foreignKey = @ForeignKey(name = "users2roles_user_fk"),
+            uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "roles_enum"}))
     @Enumerated(EnumType.STRING)
+    @Column(name = "roles_enum", length = LENGTH_ENUM, nullable = BUN_NULL )
     private Set<Role> roles = new HashSet<>();
 
 
-    public boolean isAdmin(){
+    public boolean isAdmin() {
         return roles.contains(Role.ADMIN);
     }
 
@@ -88,7 +92,7 @@ public class User extends BaseEntity implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return isActive();
+        return getActive();
     }
 
 
