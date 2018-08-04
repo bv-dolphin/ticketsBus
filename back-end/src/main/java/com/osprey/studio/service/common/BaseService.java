@@ -13,4 +13,5 @@ public interface BaseService <E extends BaseEntity>{
     void delete(Long id);
     void delete(E entity);
     Iterable<E> getAll(Iterable<Long> ids);
+    Iterable<E> getAll();
 }

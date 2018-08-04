@@ -1,6 +1,6 @@
-package com.osprey.studio.controller;
+package com.osprey.studio.controller.rest;
 
-import com.osprey.studio.controller.common.AbstractBaseRestController;
+import com.osprey.studio.controller.rest.common.AbstractBaseRestController;
 import com.osprey.studio.domain.Bus;
 import com.osprey.studio.service.BusService;
 import com.osprey.studio.service.common.BaseService;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import static com.osprey.studio.controller.BusRestController.NAME_RESOURCE;
+import static com.osprey.studio.controller.rest.BusRestController.NAME_RESOURCE;
 
 @RestController
 @RequestMapping("/" + BusRestController.ROOT_PATH)

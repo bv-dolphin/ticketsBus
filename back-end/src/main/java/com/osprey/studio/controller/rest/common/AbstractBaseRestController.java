@@ -1,9 +1,11 @@
-package com.osprey.studio.controller.common;
+package com.osprey.studio.controller.rest.common;
 
 import com.osprey.studio.domain.BaseEntity;
 import com.osprey.studio.service.common.BaseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
+import java.util.List;
 
 public abstract class AbstractBaseRestController<E extends BaseEntity> implements BaseRestController<E> {
 
@@ -16,5 +18,36 @@ public abstract class AbstractBaseRestController<E extends BaseEntity> implement
         }
         E result = getService().getById(id).get();
         return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
+
+    @Override
+    public ResponseEntity<E> create(E entity) {
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<E> update(E entity) {
+        return null;
+    }
+
+    @Override
+    public void delete(Long id) {
+
+    }
+
+    @Override
+    public void delete(E entity) {
+
+    }
+
+    @Override
+    public ResponseEntity<List<E>> getAll() {
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<List<E>> getAll(Iterable<Long> ids) {
+        return null;
     }
 }
