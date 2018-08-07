@@ -25,7 +25,7 @@ create table user2roles_tbl (
 
 alter table user2roles_tbl
   add constraint users2roles_user_fk foreign key (user_id) references users_tbl;
-
+``
 -- token_tbl
 drop table token_tbl if exists;
 

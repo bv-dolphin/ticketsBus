@@ -28,7 +28,7 @@ public class User extends BaseEntity implements UserDetails {
     public static final int LENGTH = 100;
 
     @NotBlank(message = "errors.user.firstname.not-null")
-    @Column(name = "fist_name", nullable = BUN_NULL, length = LENGTH)
+    @Column(name = "fist_name", nullable = BUN_NULL, length = LENGTH, unique = )
     private String firstName;
 
     @NotBlank(message = "errors.user.last-name.not-null")

@@ -6,10 +6,14 @@ spring:
      write_dates_as_timestamps: false
   profiles:
     active: test
+  mandatory-file-encoding: utf-8 #кодировка файлов на диске(при необходимости);
 logging:
   level:
     ROOT: INFOgit
-  
+
+#порт по умолчанию;
+server:
+  port: 8080
 ---
 
 spring:

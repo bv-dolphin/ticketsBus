@@ -27,8 +27,7 @@ public class Token extends BaseEntity {
     private String tokenSession;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", referencedColumnName = "id",
-    foreignKey = @ForeignKey(name = "tokens_users_fk"))
+    @JoinColumn(name = "user_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "tokens_users_fk"))
     private User user;
 
 }
