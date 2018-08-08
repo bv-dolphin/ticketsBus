@@ -1,6 +1,6 @@
 package com.osprey.studio.controller.rest.common;
 
-import com.osprey.studio.domain.BaseEntity;
+import com.osprey.studio.domain.entities.BaseEntity;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;

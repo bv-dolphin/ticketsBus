@@ -1,6 +1,6 @@
 package com.osprey.studio.service;
 
-import com.osprey.studio.domain.User;
+import com.osprey.studio.domain.entities.User;
 import com.osprey.studio.repository.UserRepository;
 import com.osprey.studio.repository.common.BaseRepository;
 import com.osprey.studio.service.common.AbstractBaseService;

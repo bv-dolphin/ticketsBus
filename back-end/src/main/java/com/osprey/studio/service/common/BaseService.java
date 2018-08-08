@@ -1,6 +1,6 @@
 package com.osprey.studio.service.common;
 
-import com.osprey.studio.domain.BaseEntity;
+import com.osprey.studio.domain.entities.BaseEntity;
 
 import java.util.Optional;
 

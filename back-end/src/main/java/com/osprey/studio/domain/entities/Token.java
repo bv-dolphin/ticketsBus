@@ -1,4 +1,4 @@
-package com.osprey.studio.domain;
+package com.osprey.studio.domain.entities;
 
 
 import lombok.*;
@@ -6,7 +6,7 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-import static com.osprey.studio.domain.User.BUN_NULL;
+import static com.osprey.studio.domain.entities.User.BUN_NULL;
 
 @Getter
 @Setter

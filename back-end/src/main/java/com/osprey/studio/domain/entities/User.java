@@ -1,6 +1,7 @@
-package com.osprey.studio.domain;
+package com.osprey.studio.domain.entities;
 
 import com.osprey.studio.domain.enums.Role;
+import com.osprey.studio.domain.enums.State;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,13 +23,13 @@ import java.util.Set;
 @Table(name = "users_tbl",
         uniqueConstraints = {
                 @UniqueConstraint(columnNames = "email", name = "email_unique")})
-public class User extends BaseEntity implements UserDetails {
+public class User extends BaseEntity {
 
     public static final boolean BUN_NULL = false;
     public static final int LENGTH = 100;
 
     @NotBlank(message = "errors.user.firstname.not-null")
-    @Column(name = "fist_name", nullable = BUN_NULL, length = LENGTH, unique = )
+    @Column(name = "fist_name", nullable = BUN_NULL, length = LENGTH)
     private String firstName;
 
     @NotBlank(message = "errors.user.last-name.not-null")
@@ -46,6 +47,10 @@ public class User extends BaseEntity implements UserDetails {
     @Column(name = "active")
     private Boolean active;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "state_enum")
+    private State state;
+
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user2roles_tbl",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = BUN_NULL),
@@ -60,40 +65,7 @@ public class User extends BaseEntity implements UserDetails {
         return roles.contains(Role.ADMIN);
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return getRoles();
-    }
 
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
-    public String getUsername() {
-        return email; // ?????
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return getActive();
-    }
 
 
 }

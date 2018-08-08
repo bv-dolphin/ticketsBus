@@ -1,4 +1,4 @@
-package com.osprey.studio.domain;
+package com.osprey.studio.domain.entities;
 
 
 import lombok.AllArgsConstructor;

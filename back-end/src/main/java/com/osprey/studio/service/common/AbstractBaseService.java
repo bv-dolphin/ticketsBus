@@ -1,6 +1,6 @@
 package com.osprey.studio.service.common;
 
-import com.osprey.studio.domain.BaseEntity;
+import com.osprey.studio.domain.entities.BaseEntity;
 import com.osprey.studio.repository.common.BaseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

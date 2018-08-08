@@ -1,6 +1,6 @@
 package com.osprey.studio.controller.rest.common;
 
-import com.osprey.studio.domain.BaseEntity;
+import com.osprey.studio.domain.entities.BaseEntity;
 import com.osprey.studio.service.common.BaseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

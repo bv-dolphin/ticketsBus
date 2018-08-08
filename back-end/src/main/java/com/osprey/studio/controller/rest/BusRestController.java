@@ -1,7 +1,7 @@
 package com.osprey.studio.controller.rest;
 
 import com.osprey.studio.controller.rest.common.AbstractBaseRestController;
-import com.osprey.studio.domain.Bus;
+import com.osprey.studio.domain.entities.Bus;
 import com.osprey.studio.service.BusService;
 import com.osprey.studio.service.common.BaseService;
 import io.swagger.annotations.Api;
