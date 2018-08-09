@@ -9,7 +9,7 @@ spring:
   mandatory-file-encoding: utf-8 #кодировка файлов на диске(при необходимости);
 logging:
   level:
-    ROOT: INFOgit
+    ROOT: ERROR
 
 #порт по умолчанию;
 server:

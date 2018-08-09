@@ -5,9 +5,9 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class UserForm {
+public class UserRegistrationForm {
     private String firstName;
     private String lastName;
-    private String email;
+    private String login;
     private String password;
 }

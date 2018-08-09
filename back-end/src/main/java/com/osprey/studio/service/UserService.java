@@ -4,8 +4,9 @@ import com.osprey.studio.domain.entities.User;
 import com.osprey.studio.repository.UserRepository;
 import com.osprey.studio.repository.common.BaseRepository;
 import com.osprey.studio.service.common.AbstractBaseService;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class UserService extends AbstractBaseService<User> {
     //comment
     public final UserRepository repository;

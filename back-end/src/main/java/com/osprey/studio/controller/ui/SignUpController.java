@@ -1,10 +1,14 @@
 package com.osprey.studio.controller.ui;
 
-import com.osprey.studio.domain.forms.UserForm;
+import com.osprey.studio.domain.forms.UserRegistrationForm;
 import com.osprey.studio.service.security.SignUpService;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class SignUpController {
@@ -15,15 +19,26 @@ public class SignUpController {
         this.service = service;
     }
 
-    @GetMapping
+    @GetMapping("/signUp")
     public String getSignUpPage() {
         return "signUp";
     }
 
     @PostMapping("/signUp")
-    public String signUp(UserForm userForm) {
-        service.signUp(userForm);
+    public String signUp(UserRegistrationForm userRegistrationForm) {
+        service.signUp(userRegistrationForm);
         return "redirect:/login";
+    }
+
+    @GetMapping("/login")
+    public String getLoginPage(Authentication authentication, ModelMap model, HttpServletRequest request) {
+        if (authentication != null) {
+            return "redirect:/";
+        }
+        if (request.getParameterMap().containsKey("error")) {
+            model.addAttribute("error", true);
+        }
+        return "login";
     }
 
 }
