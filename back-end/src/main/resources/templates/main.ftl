@@ -7,7 +7,7 @@
 <main>
 <div class="row">
 
-    <form  class="col s12" style="margin-top: 250px; margin-left: 0px">
+    <form  class="col s12" style="margin-top: 250px; margin-left:">
         <div class="row" style="margin-left: 200px">
             <div class="input-field col s3" style="margin-right: 100px">
                 <i class="material-icons prefix">directions_bus</i>
@@ -22,7 +22,7 @@
             </div>
             <div class="input-field col s2" style="margin-right: 50px">
                 <i class="material-icons prefix">today</i>
-                <input id="icon_telephone" type="tel" class="validate">
+                <input id="icon_telephone" type="tel" class="datepicker">
                 <label for="icon_telephone">Дата</label>
             </div>
         </div>
@@ -35,7 +35,7 @@
          <ul class="collection">
              <li class="collection-item avatar">
 
-                 <img src=/static/images/bus.jpg class="circle">
+                 <img src=/static/images/men.jpg class="circle">
 
                  <i class="material-icons">directions_bus</i>
                  <span class="title">Москва - Киев</span>
@@ -49,7 +49,7 @@
                  </div>
              </li>
              <li class="collection-item avatar">
-                 <img src=/static/images/bus.jpg class="circle">
+                 <img src=/static/images/men.jpg class="circle">
                  <i class="material-icons">directions_bus</i>
                  <span class="title">Москва - Киев</span>
                  <p>13 авг.
@@ -62,7 +62,7 @@
                  </div>
              </li>
              <li class="collection-item avatar">
-                 <img src=/static/images/bus.jpg class="circle">
+                 <img src=/static/images/men.jpg class="circle">
                  <i class="material-icons">directions_bus</i>
                  <span class="title">Москва - Киев</span>
                  <p>13 авг.
@@ -75,7 +75,7 @@
                  </div>
              </li>
              <li class="collection-item avatar">
-                 <img src=/static/images/bus.jpg class="circle">
+                 <img src=/static/images/men.jpg class="circle">
                  <i class="material-icons">directions_bus</i>
                  <span class="title">Москва - Киев</span>
                  <p>13 авг.
@@ -90,7 +90,7 @@
          </ul>
      </div>
      <div class="modal-footer">
-         <a href="#!" class="btn-flat modal-action modal-close waves-effect waves-default">close</a>
+         <a href="#" class="btn-flat modal-action modal-close waves-effect waves-default">close</a>
      </div>
  </div>
 </main>
@@ -102,10 +102,18 @@
     });
 </script>
 
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $('.datepicker').datepicker();
+    });
+
+</script>
+
 <!--materialize <script --->
 
 <script type="text/javascript" src="/static/js/jquery.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="/static/js/materialize.min.js"></script>
 
 
 <@f.footer></@f.footer>
