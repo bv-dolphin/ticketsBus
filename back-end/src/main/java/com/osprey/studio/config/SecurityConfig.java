@@ -95,7 +95,7 @@ public class SecurityConfig {
                         .formLogin()
                             .loginPage("/public/login")
                                 .usernameParameter("email")
-                            .defaultSuccessUrl("/")
+                    .defaultSuccessUrl("/public/main")
                         .permitAll()
                     .and()
                         .rememberMe()

@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
-import static com.osprey.studio.domain.transfer.UserDto.from;
-
 @Controller
 @RequestMapping("/" + LoginUiController.ROOT_PATH)
 public class LoginUiController {
@@ -20,7 +18,7 @@ public class LoginUiController {
     public String getLoginPage(Authentication authentication, ModelMap model, HttpServletRequest request) {
 
         if (authentication != null) {
-            return "redirect:/";
+            return "redirect:/public/main";
         }
 
         if (request.getParameterMap().containsKey("error")) {

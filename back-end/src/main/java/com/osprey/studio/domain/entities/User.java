@@ -3,13 +3,10 @@ package com.osprey.studio.domain.entities;
 import com.osprey.studio.domain.enums.Role;
 import com.osprey.studio.domain.enums.State;
 import lombok.*;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -60,12 +57,8 @@ public class User extends BaseEntity {
     @Column(name = "roles_enum", length = LENGTH_ENUM, nullable = BUN_NULL )
     private Set<Role> roles = new HashSet<>();
 
-
     public boolean isAdmin() {
         return roles.contains(Role.ADMIN);
     }
-
-
-
 
 }
