@@ -31,7 +31,7 @@
 
  <div class="modal bottom-sheet"  id="modal1">
      <div class="modal-content">
-         <h4> Забранировать билет </h4>
+         <h4> Забронировать билет </h4>
          <ul class="collection">
              <li class="collection-item avatar">
 
@@ -40,52 +40,50 @@
                  <i class="material-icons">directions_bus</i>
                  <span class="title">Москва - Киев</span>
                  <p>13 авг.
+                     <button class="btn waves-effect waves-light pink" type="submit" name="action" style="margin-left: 1400px" >Купить
+                         <i class="material-icons right">send</i>
+                     </button>
+
                      <br> 6.00
+
                  </p>
-                 <div style="margin-left: 1500px">
-                 <button class="btn waves-effect waves-light pink" type="submit" name="action" >Купить
-                     <i class="material-icons right">send</i>
-                 </button>
-                 </div>
+
+
              </li>
              <li class="collection-item avatar">
                  <img src=/static/images/men.jpg class="circle">
                  <i class="material-icons">directions_bus</i>
                  <span class="title">Москва - Киев</span>
                  <p>13 авг.
+                     <button class="btn waves-effect waves-light pink" type="submit" name="action" style="margin-left: 1400px" >Купить
+                         <i class="material-icons right">send</i>
+                     </button>
                      <br> 21.00
                  </p>
-                 <div style="margin-left: 1500px">
-                     <button class="btn waves-effect waves-light pink" type="submit" name="action" >Купить
-                         <i class="material-icons right">send</i>
-                     </button>
-                 </div>
              </li>
+
              <li class="collection-item avatar">
                  <img src=/static/images/men.jpg class="circle">
                  <i class="material-icons">directions_bus</i>
                  <span class="title">Москва - Киев</span>
                  <p>13 авг.
+                     <button class="btn waves-effect waves-light pink" type="submit" name="action" style="margin-left: 1400px" >Купить
+                         <i class="material-icons right">send</i>
+                     </button>
                      <br> 15.00
                  </p>
-                 <div style="margin-left: 1500px">
-                     <button class="btn waves-effect waves-light pink" type="submit" name="action" >Купить
-                         <i class="material-icons right">send</i>
-                     </button>
-                 </div>
+
              </li>
              <li class="collection-item avatar">
                  <img src=/static/images/men.jpg class="circle">
                  <i class="material-icons">directions_bus</i>
                  <span class="title">Москва - Киев</span>
                  <p>13 авг.
-                     <br> 23.00
-                 </p>
-                 <div style="margin-left: 1500px">
-                     <button class="btn waves-effect waves-light pink" type="submit" name="action" >Купить
+                     <button class="btn waves-effect waves-light pink" type="submit" name="action" style="margin-left: 1400px" >Купить
                          <i class="material-icons right">send</i>
                      </button>
-                 </div>
+                     <br> 23.00
+                 </p>
              </li>
          </ul>
      </div>
