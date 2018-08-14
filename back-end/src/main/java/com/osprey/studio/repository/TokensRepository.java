@@ -8,4 +8,5 @@ import java.util.Optional;
 
 public interface TokensRepository extends BaseRepository<Token, Long> {
 
+    Optional<Token> findOneByTokenSession(String token);
 }

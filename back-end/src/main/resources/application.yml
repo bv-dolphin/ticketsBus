@@ -7,15 +7,22 @@ spring:
   profiles:
     active: test
   mandatory-file-encoding: utf-8 #кодировка файлов на диске(при необходимости);
+  mvc:
+    static-path-pattern:/resources/**
 logging:
   level:
-    ROOT: ERROR
-
+    ROOT: INFO # ERROR
+---
 #порт по умолчанию;
 server:
   port: 8080
 ---
 
+jwt:
+  secretKey: "somekey"
+  tokenValidityInMilliseconds: 86400000
+  tokenValidityInMillisecondsForRememberMe: 2592000000
+---
 spring:
   profiles: dev
   jpa:

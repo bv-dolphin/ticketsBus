@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BusFlightService extends AbstractBaseService<BusFlight> {
+
     public final BusFlightRepository repository;
+
     @Override
     protected BaseRepository<BusFlight, Long> getRepository() {
         return repository;

@@ -1,8 +1,7 @@
 package com.osprey.studio.service.security;
 
-import com.osprey.studio.domain.forms.LoginForm;
-import com.osprey.studio.domain.transfer.TokenDto;
+import com.osprey.studio.domain.forms.UserLogin;
 
 public interface LoginService {
-    TokenDto login(LoginForm loginForm);
+     String createToken(UserLogin userLogin);
 }

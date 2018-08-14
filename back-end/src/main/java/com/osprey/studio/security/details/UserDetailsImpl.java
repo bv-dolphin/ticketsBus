@@ -1,4 +1,4 @@
-package com.osprey.studio.service.security;
+package com.osprey.studio.security.details;
 
 import com.osprey.studio.domain.entities.User;
 import com.osprey.studio.domain.enums.State;

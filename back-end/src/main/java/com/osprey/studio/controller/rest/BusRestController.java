@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import static com.osprey.studio.controller.rest.BusRestController.NAME_RESOURCE;
 
 @RestController
-@RequestMapping("/" + BusRestController.ROOT_PATH)
+@RequestMapping("/api/" + BusRestController.ROOT_PATH)
 @Api(description = "/" + NAME_RESOURCE)    // показывает свагер название ресурса
 public class BusRestController extends AbstractBaseRestController<Bus> {
     private final BusService busService;
@@ -39,7 +39,7 @@ public class BusRestController extends AbstractBaseRestController<Bus> {
             @ApiResponse(code = 400, message = NAME_RESOURCE + " Неправильные параметры"),
             @ApiResponse(code = 404, message = NAME_RESOURCE + " Not Found")
     })
-    @RequestMapping(path = "/{id}", method = RequestMethod.GET, produces = "application/dolphin.app-v1.0+json")
+    @RequestMapping(path = "/{id}", method = RequestMethod.GET, produces = "application/tickets-bus.app-v1.0+json")
     @Override
     public ResponseEntity<Bus> getById(Long id) {
         return super.getById(id);

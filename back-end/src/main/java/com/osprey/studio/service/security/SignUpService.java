@@ -1,7 +1,9 @@
 package com.osprey.studio.service.security;
 
-import com.osprey.studio.domain.forms.UserRegistrationForm;
+import com.osprey.studio.domain.forms.UserRegistration;
 
 public interface SignUpService {
-    void signUp(UserRegistrationForm userRegistrationForm);
+
+    void signUp(UserRegistration userRegistration);
+
 }
