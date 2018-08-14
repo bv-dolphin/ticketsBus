@@ -25,4 +25,5 @@
 /.nb-gradle/
 
 /back-end/target/*
+/telegramBot/target/*
 /database/*
