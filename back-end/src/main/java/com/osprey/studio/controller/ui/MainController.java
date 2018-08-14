@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/" + MainController.ROOT_PATH)
 public class MainController {
 
-    public static final String ROOT_PATH = "public";
+    static final String ROOT_PATH = "public";
 
     @GetMapping("/main")
     public String main() {
         return "main";
     }
+
+    @GetMapping("/information")
+    public String info() {return "info"; }
 }

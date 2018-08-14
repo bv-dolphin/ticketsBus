@@ -4,6 +4,7 @@
 
 <@c.page>
     <@n.navbar></@n.navbar>
+<main>
  <h5 class="card-title center" style="margin-top: 50px" >Личный кабинет</h5>
 <div class="container">
 
@@ -39,6 +40,6 @@
           </div>
       </form>
   </div>
-
-
+</main>
+<@f.footer></@f.footer>
 </@c.page>
