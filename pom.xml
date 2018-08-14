@@ -12,6 +12,7 @@
 
     <modules>
         <module>back-end</module>
+        <module>telegramBot</module>
     </modules>
 
     <parent>
@@ -28,6 +29,7 @@
         <swagger2.version>2.8.0</swagger2.version>
         <guava.version>24.0-jre</guava.version>
         <project.version>1.9</project.version>
+        <jjwt.version>0.7.0</jjwt.version>
     </properties>
 
 </project>

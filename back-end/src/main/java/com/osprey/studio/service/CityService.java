@@ -1,6 +1,6 @@
 package com.osprey.studio.service;
 
-import com.osprey.studio.domain.City;
+import com.osprey.studio.domain.entities.City;
 import com.osprey.studio.repository.CityRepository;
 import com.osprey.studio.repository.common.BaseRepository;
 import com.osprey.studio.service.common.AbstractBaseService;

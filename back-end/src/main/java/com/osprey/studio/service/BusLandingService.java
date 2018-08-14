@@ -1,6 +1,6 @@
 package com.osprey.studio.service;
 
-import com.osprey.studio.domain.BusLanding;
+import com.osprey.studio.domain.entities.BusLanding;
 import com.osprey.studio.repository.BusLandingRepository;
 import com.osprey.studio.repository.common.BaseRepository;
 import com.osprey.studio.service.common.AbstractBaseService;

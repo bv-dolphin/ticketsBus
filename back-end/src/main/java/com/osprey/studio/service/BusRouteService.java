@@ -1,6 +1,6 @@
 package com.osprey.studio.service;
 
-import com.osprey.studio.domain.BusRoute;
+import com.osprey.studio.domain.entities.BusRoute;
 import com.osprey.studio.repository.BusRouteRepository;
 import com.osprey.studio.repository.common.BaseRepository;
 import com.osprey.studio.service.common.AbstractBaseService;

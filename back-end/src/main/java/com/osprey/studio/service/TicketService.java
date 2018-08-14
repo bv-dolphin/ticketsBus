@@ -1,6 +1,6 @@
 package com.osprey.studio.service;
 
-import com.osprey.studio.domain.Ticket;
+import com.osprey.studio.domain.entities.Ticket;
 import com.osprey.studio.repository.TicketRepository;
 import com.osprey.studio.repository.common.BaseRepository;
 import com.osprey.studio.service.common.AbstractBaseService;
