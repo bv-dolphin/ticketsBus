@@ -5,6 +5,7 @@
 <@c.page>
 <@n.navbar></@n.navbar>
 <main>
+    <div class="card-content" >
 <div class="row">
 
     <form  class="col s12" style="margin-top: 250px; margin-left:">
@@ -28,6 +29,7 @@
         </div>
         <button class=" btn btn-large waves-effect waves-default btn modal-trigger" data-target="modal1" style="margin-left: 220px; margin-top: 70px;">Найти билет</button>
 </div>
+</div>
 
  <div class="modal bottom-sheet"  id="modal1">
      <div class="modal-content">
@@ -40,16 +42,13 @@
                  <i class="material-icons">directions_bus</i>
                  <span class="title">Москва - Киев</span>
                  <p>13 авг.
-                     <button class="btn waves-effect waves-light pink" type="submit" name="action" style="margin-left: 1400px" >Купить
+                  <a href="/public/ticket" class="btn waves-effect waves-light pink" data-target="modal2" style="margin-left: 1400px" >Купить
                          <i class="material-icons right">send</i>
-                     </button>
-
-                     <br> 6.00
-
+                  </a>
+                    <br> 6.00
                  </p>
-
-
              </li>
+
              <li class="collection-item avatar">
                  <img src=/static/images/men.jpg class="circle">
                  <i class="material-icons">directions_bus</i>
@@ -90,7 +89,9 @@
      <div class="modal-footer">
          <a href="#" class="btn-flat modal-action modal-close waves-effect waves-default">close</a>
      </div>
+
  </div>
+
 </main>
 
 
@@ -110,7 +111,7 @@
 
 </script>
 
-<!--materialize <script --->
+<!--materialize script --->
 
 <script type="text/javascript" src="/static/js/jquery.min.js"></script>
 <script type="text/javascript" src="/static/js/materialize.min.js"></script>

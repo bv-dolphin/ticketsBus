@@ -6,12 +6,11 @@
         <a href="#" class="brand-logo left">Osprey Fast Bus</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 250px">
             <li><a href="/public/main">Купить билет</a></li>
-            <li><a href="/public/information">Информация</a></li>
+            <li><a href="/public/info">Информация</a></li>
             <!--   <li><a href=/staff">Персонал</a></li> -->
             <li><a href="/profile">Личный кабинет</a></li>
             <li ><a href="/public/login">Войти на сайт</a></li>
         </ul>
-
         </div>
     </div>
  </nav>

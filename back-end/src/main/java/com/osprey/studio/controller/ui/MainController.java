@@ -16,6 +16,12 @@ public class MainController {
         return "main";
     }
 
-    @GetMapping("/information")
+    @GetMapping("/info")
     public String info() {return "info"; }
+
+    @GetMapping("/ticket")
+    public String ticket() {return "ticket"; }
+
+    @GetMapping("/contacts")
+    public String contacts() {return "contacts"; }
 }
