@@ -7,7 +7,7 @@
 <main>
     <div id="test1" class="col s12">
         <div class="container">
-            <div class="card" style="color:#009688; border-color: 2px #009688; margin-top:50px; "  >
+            <div class="card" style="color:#009688; margin-top:50px; "  >
                 <div class="card-content" >
                     <h3 >Информация</h3>
 

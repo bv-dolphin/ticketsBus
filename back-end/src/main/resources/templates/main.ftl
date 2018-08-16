@@ -5,11 +5,12 @@
 <@c.page>
 <@n.navbar></@n.navbar>
 <main>
-    <div class="card-content" >
 <div class="row">
 
     <form  class="col s12" style="margin-top: 250px; margin-left:">
+
         <div class="row" style="margin-left: 200px">
+
             <div class="input-field col s3" style="margin-right: 100px">
                 <i class="material-icons prefix">directions_bus</i>
                 <input id="icon_prefix" type="text"  class="validate">
@@ -29,7 +30,7 @@
         </div>
         <button class=" btn btn-large waves-effect waves-default btn modal-trigger" data-target="modal1" style="margin-left: 220px; margin-top: 70px;">Найти билет</button>
 </div>
-</div>
+
 
  <div class="modal bottom-sheet"  id="modal1">
      <div class="modal-content">

@@ -5,8 +5,8 @@
 <@c.page>
     <@n.navbar></@n.navbar>
 <main>
- <h5 class="card-title center" style="margin-top: 50px" >Личный кабинет</h5>
-<div class="container">
+ <h5 class="card-title center" style="margin-top: 50px; color: #009688" >Личный кабинет</h5>
+<div class="container" >
 
   <div class="row" style="margin-top: 100px">
       <form class="col s12">
