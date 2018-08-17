@@ -7,6 +7,8 @@ import lombok.Setter;
 @Getter
 public class UserRegistration {
 
-    private String email;
+    private String firstName;
+    private String lastName;
+    private String login;
     private String password;
 }
