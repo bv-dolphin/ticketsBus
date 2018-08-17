@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Getter
@@ -17,8 +17,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Schedule extends BaseEntity {
 
-	@Size(min = 3, max = 100, message = "errors.schedule.value.max")
-	@Column(name = "depature_date", nullable = false, length = 255,unique = true)
+	@NotNull
+	@Column(name = "depature_date", nullable = false)
 	private LocalDateTime departureDate;
 
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -27,6 +27,6 @@ public class Schedule extends BaseEntity {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "bus_id")
-	private Bus Bus;
+	private Bus bus;
 
 }

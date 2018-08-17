@@ -18,7 +18,7 @@ import javax.validation.constraints.Size;
 public class City extends BaseEntity {
 
     @NotBlank(message = "error.city.cityname.isnull")
-    @Size(min = 3, max = 100, message = "errors.city.cityName.value.size")
+    @Size(min = 3, max = 50, message = "errors.city.cityName.value.size")
     @Column(name = "city", nullable = false, length = 50, unique = true)
     private String cityName;
 

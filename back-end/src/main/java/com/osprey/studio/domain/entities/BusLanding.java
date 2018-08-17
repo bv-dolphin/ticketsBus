@@ -7,7 +7,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Getter
 @Setter
@@ -18,9 +17,8 @@ import javax.validation.constraints.Size;
 public class BusLanding extends BaseEntity {
 
 	@NotNull
-	@Size(min = 3, max = 100, message = "errors.buslanding.value.max")
-	@Column(name = "place_number", nullable = false, length = 255,unique = true)
-	private int placeNumber;
+	@Column(name = "place_number", nullable = false)
+	private Integer placeNumber;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "schedule_id")

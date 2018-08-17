@@ -1,28 +1,28 @@
 package com.osprey.studio.controller.ui;
 
-import com.osprey.studio.domain.forms.UserRegistration;
-
-import com.osprey.studio.service.security.SignUpService;
+import com.osprey.studio.domain.entities.User;
+import com.osprey.studio.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 @Controller
 
 public class RegistrationController {
 
 
+    @Autowired
+    public UserService userService;
 
-    private final SignUpService service;
-
-    public RegistrationController(SignUpService service) {
-        this.service = service;
-    }
 
     @GetMapping("/registration")
     public String getSignUpPage() {
@@ -30,10 +30,20 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String signUp(UserRegistration userRegistrationForm) {
-        service.signUp(userRegistrationForm);
-        return "redirect:/login";
+    public String createUser
+            (@RequestParam("confirmPassword") String confirmPassword,
+            @Valid User user,
+             BindingResult bindingResult,
+             Model model) {
+        if (user.getPassword() != null, && !user.getPassword().equals())
     }
+
+    {
+
+    }
+
+
+
 
     @GetMapping("/recovery")
     public String reminder() {

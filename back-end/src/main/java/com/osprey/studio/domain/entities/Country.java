@@ -19,7 +19,7 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 public class Country extends BaseEntity {
 	@NotBlank(message = "error.country.countryname.isnull")
-	@Size(min = 3, max = 100, message = "errors.country.countryName.value.size")
+	@Size(min = 3, max = 50, message = "errors.country.countryName.value.size")
 	@Column(name = "country", nullable = false, length = 50,unique = true)
 	private String countryName;
 

@@ -112,6 +112,7 @@
 <!--materialize script --->
 
 <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+
 <script type="text/javascript" src="/static/js/materialize.min.js"></script>
 
 

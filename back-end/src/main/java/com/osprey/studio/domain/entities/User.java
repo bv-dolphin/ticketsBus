@@ -48,6 +48,8 @@ public class User extends BaseEntity {
     @Column(name = "state_enum")
     private State state;
 
+
+
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user2roles_tbl",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = BUN_NULL),

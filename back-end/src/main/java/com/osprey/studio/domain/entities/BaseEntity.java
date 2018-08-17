@@ -17,7 +17,6 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass  //  авто авторайд в другие классы
 public abstract class BaseEntity {
     public static final int LENGTH_ENUM = 20;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

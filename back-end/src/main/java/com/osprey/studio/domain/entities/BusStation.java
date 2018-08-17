@@ -19,20 +19,20 @@ import javax.validation.constraints.Size;
 public class BusStation extends BaseEntity {
 
     @NotNull
-    @Size(min = 3, max = 100, message = "errors.busstation.value.max")
-    @Column(name = "bus_station_name", nullable = false, length = 255, unique = true)
+    @Size(min = 3, max = 20, message = "errors.busstation.busstationname.value.size")
+    @Column(name = "bus_station_name", nullable = false, length = 20, unique = true)
     private String busStationName;
 
-    @Size(min = 3, max = 100, message = "errors.busstation.value.max")
-    @Column(name = "street_name", nullable = true, length = 255, unique = false)
+    @Size(min = 3, max = 100, message = "errors.busstation.streetname.value.size")
+    @Column(name = "street_name", nullable = true, length = 100, unique = false)
     private String streetName;
 
-    @Size(min = 3, max = 100, message = "errors.busstation.value.max")
-    @Column(name = "latitude", nullable = true, length = 255, unique = false)
+    @Size(min = 3, max = 100, message = "errors.busstation.latitude.value.size")
+    @Column(name = "latitude", nullable = true, length = 100, unique = false)
     private String latitude;
 
-    @Size(min = 3, max = 100, message = "errors.busstation.value.max")
-    @Column(name = "longitude", nullable = true, length = 255, unique = false)
+    @Size(min = 3, max = 100, message = "errors.busstation.longitude.value.size")
+    @Column(name = "longitude", nullable = true, length = 100, unique = false)
     private String longitude;
 
     @ManyToOne(fetch = FetchType.EAGER)

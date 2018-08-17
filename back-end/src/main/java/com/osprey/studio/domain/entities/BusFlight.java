@@ -21,37 +21,32 @@ import java.time.LocalDateTime;
 public class BusFlight extends BaseEntity {
 
     @NotNull
-    @Size(min = 1, max = 10, message = "errors.busflight.value.max")
-    @Column(name = "flight_number", nullable = false, length = 10,unique = true)
-	private String flightNumber;
+    @Column(name = "flight_number", nullable = false)
+	private Integer flightNumber;
 
     @NotNull
-    @Size(min = 3, max = 100, message = "errors.busflight.value.max")
+    @Size(min = 3, max = 100, message = "errors.busflight.flightname.value.size")
     @Column(name = "flight_name", nullable = false, length = 255,unique = true)
 	private String flightName;
 
-    @Size(min = 3, max = 100, message = "errors.busflight.value.max")
-    @Column(name = "departure", nullable = true, length = 255,unique = false)
+    @Size(min = 3, max = 100, message = "errors.busflight.departure.value.size")
+    @Column(name = "departure", nullable = true, length = 100,unique = false)
 	private String departure;
 
-    @Size(min = 3, max = 100, message = "errors.busflight.value.max")
-    @Column(name = "arrival", nullable = true, length = 255,unique = false)
+    @Size(min = 3, max = 100, message = "errors.busflight.arrival.value.size")
+    @Column(name = "arrival", nullable = true, length = 100,unique = false)
 	private String arrival;
 
-    @Size(min = 1, max = 100, message = "errors.busflight.value.max")
-    @Column(name = "departure_time", nullable = true, length = 255,unique = false)
+    @Column(name = "departure_time", nullable = true)
 	private LocalDateTime departureTime;
 
-    @Size(min = 1, max = 100, message = "errors.busflight.value.max")
-    @Column(name = "arrival_time", nullable = true, length = 255,unique = false)
+    @Column(name = "arrival_time", nullable = true)
 	private LocalDateTime arrivalTime;
 
-    @Size(min = 1, max = 100, message = "errors.busflight.value.max")
-    @Column(name = "price", nullable = true, length = 10, unique = false)
+    @Column(name = "price", nullable = true)
 	private double price;
 
-    @Size(min = 1, max = 100, message = "errors.busflight.value.max")
-    @Column(name = "km", nullable = true, length = 10, unique = false)
+    @Column(name = "km", nullable = true)
 	private int km;
 
 }

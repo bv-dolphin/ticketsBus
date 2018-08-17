@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 
@@ -18,21 +18,23 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class BusRoute extends BaseEntity {
 
-    @Column(name = "departure_time", nullable = false, length = 7, unique = false)
+    @NotNull
+    @Column(name = "departure_time", nullable = false)
     private LocalDateTime departureTime;
 
-    @Column(name = "arrival_time", nullable = false, length = 7, unique = false)
+    @NotNull
+    @Column(name = "arrival_time", nullable = false)
     private LocalDateTime arrivalTime;
 
-    @Size(min = 1, max = 100, message = "errors.busroute.km.max")
-    @Column(name = "km", nullable = true, length = 10, unique = false)
+    @NotNull
+    @Column(name = "km", nullable = true)
 	private Integer km;
 
 	@ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "bus_flight_id")
 	private BusFlight busFlight;
 
-	@ManyToOne
+	@ManyToOne (fetch = FetchType.EAGER)
     @JoinColumn(name = "bus_station_id")
 	private BusStation busStation;
 

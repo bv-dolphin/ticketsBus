@@ -17,6 +17,7 @@ public class UserDto {
     private String firstName;
     private String lastName;
 
+
     public static UserDto from(User user) {
         return UserDto.builder()
                 .firstName(user.getFirstName())
