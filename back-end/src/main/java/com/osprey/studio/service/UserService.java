@@ -7,6 +7,8 @@ import com.osprey.studio.service.common.AbstractBaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserService extends AbstractBaseService<User> {
     //comment
@@ -18,9 +20,8 @@ public class UserService extends AbstractBaseService<User> {
         return null;
     }
 
-    /*
-    public User findByEmail(String email) {
-       return userRepository.findByEmail(email);
+
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
-    */
-    }
+}

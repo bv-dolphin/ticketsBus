@@ -24,39 +24,39 @@ public class User extends BaseEntity {
 
     public static final boolean BUN_NULL = false;
     public static final int LENGTH = 100;
-
-    @NotBlank(message = "errors.user.firstname.not-null")
-    @Column(name = "fist_name", nullable = BUN_NULL, length = LENGTH)
+//
+    //@NotBlank(message = "errors.user.firstname.not-null")
+    //@Column(name = "fist_name", nullable = BUN_NULL, length = LENGTH)
     private String firstName;
 
-    @NotBlank(message = "errors.user.last-name.not-null")
-    @Column(name = "last_name", nullable = BUN_NULL, length = LENGTH)
+    //@NotBlank(message = "errors.user.last-name.not-null")
+//    @Column(name = "last_name", nullable = BUN_NULL, length = LENGTH)
     private String lastName;
 
-    @NotBlank(message = "errors.user.password.not-null")
-    @Column(name = "password", nullable = BUN_NULL, length = LENGTH)
+    //@NotBlank(message = "errors.user.password.not-null")
+  //  @Column(name = "password", nullable = BUN_NULL, length = LENGTH)
     private String password;
 
-    @Email(message = "errors.user.email.value.email_not_correct")
-    @Column(name = "email", nullable = BUN_NULL, length = LENGTH, unique = true) //unique уникальное значение
+ //   @Email(message = "errors.user.email.value.email_not_correct")
+ //   @Column(name = "email", nullable = BUN_NULL, length = LENGTH, unique = true) //unique уникальное значение
     private String email;
-
-    @Column(name = "active")
+//
+ //   @Column(name = "active")
     private Boolean active;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "state_enum")
+  //  @Enumerated(EnumType.STRING)
+ //   @Column(name = "state_enum")
     private State state;
 
 
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user2roles_tbl",
-            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = BUN_NULL),
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             foreignKey = @ForeignKey(name = "users2roles_user_fk"),
             uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "roles_enum"}))
     @Enumerated(EnumType.STRING)
-    @Column(name = "roles_enum", length = LENGTH_ENUM, nullable = BUN_NULL )
+    @Column(name = "roles_enum", length = LENGTH_ENUM )
     private Set<Role> roles = new HashSet<>();
 
     public boolean isAdmin() {
