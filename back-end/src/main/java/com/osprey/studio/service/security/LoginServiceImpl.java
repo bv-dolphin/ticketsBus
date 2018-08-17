@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * Процедура Authentication;
  */
 @Service
-public class LoginServiceImpl  implements LoginService{
+public class LoginServiceImpl  implements LoginService {
 
     private final TokenProvider tokenProvider;
 

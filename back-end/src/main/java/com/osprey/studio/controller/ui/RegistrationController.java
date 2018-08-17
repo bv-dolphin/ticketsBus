@@ -25,7 +25,9 @@ public class RegistrationController {
 
 
 
-    @GetMapping("/recovery")  //recovery
+
+
+    @GetMapping("/recovery")
     public String reminder() {
         return "recovery";
     }
