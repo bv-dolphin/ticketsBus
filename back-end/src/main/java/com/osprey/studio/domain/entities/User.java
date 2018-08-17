@@ -38,7 +38,7 @@ public class User extends BaseEntity {
     private String password;
 
     @Email(message = "errors.user.email.value.email_not_correct")
-    @Column(name = "email", nullable = BUN_NULL, length = LENGTH) //unique уникальное значение
+    @Column(name = "email", nullable = BUN_NULL, length = LENGTH, unique = true) //unique уникальное значение
     private String email;
 
     @Column(name = "active")
