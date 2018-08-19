@@ -6,13 +6,11 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class UserRegistration extends User  {
+public class UserRegistration  {
 
       private String email;
-      private String firstName;
-      private String lastName;
-      private String login;
       private String password;
+      private String confirmpassword;
 
 
 }

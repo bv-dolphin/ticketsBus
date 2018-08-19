@@ -5,41 +5,44 @@
 <@c.page>
     <@n.navbar></@n.navbar>
 <main>
- <h5 class="card-title center" style="margin-top: 50px; color: #009688" >Личный кабинет</h5>
-<div class="container" >
+    <div class="container "  >
+        <div class="row">
+            <div class="col s4 l3 z-depth-5 card-panel  #fafafa grey lighten-5" style="margin-top: 100px; margin-left: 450px">
 
-  <div class="row" style="margin-top: 100px">
-      <form class="col s12">
-          <div class="row">
-              <div class="input-field col s6">
-                  <input id="first_name" type="text" class="validate">
-                  <label for="first_name">First Name</label>
-              </div>
-              <div class="input-field col s6">
-                  <input id="last_name" type="text" class="validate">
-                  <label for="last_name">Last Name</label>
-              </div>
-          </div>
-          <div class="row">
-              <div class="input-field col s5">
-                  <input id="password" type="password" class="validate">
-                  <label for="password">Password</label>
-              </div>
-          </div>
-          <div class="row">
-              <div class="input-field col s5">
-                  <input id="password" type="password" class="validate">
-                  <label for="password">Сonfirm Password</label>
-              </div>
-          </div>
-          <div class="row">
-              <div class="input-field col s5">
-                  <input id="email" type="email" class="validate">
-                  <label for="email">Email</label>
-              </div>
-          </div>
-      </form>
-  </div>
+                <div id="login-page" class="row" >
+                    <form class="login-form" method="post" action="/profile">
+                        <div class="panel-heading ">
+                            <h5 class="card-title center" >Change Form</h5>
+                        </div>
+
+                        <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
+                        <div class="input-field col s9" style="margin-left: 25px; margin-top: 30px">
+                            <i class="tiny material-icons prefix" >person</i>
+                            <input  id="email" name="email" placeholder="Email" type="email" class="validate">
+                            <label class="active" for="login">email</label>
+                        </div>
+                </div>
+
+                <div class="row">
+                    <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
+                    <div class="input-field col s9" style="margin-left: 25px">
+                        <i class="tiny material-icons prefix"  >lock</i>
+                        <input  id="password" name="password" placeholder="password" type="password" class="validate">
+                        <label class="active" for="password">new password</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
+                    <div class="input-field col s9" style="margin-left: 25px">
+                        <i class="tiny material-icons prefix"  >lock</i>
+                        <input  id="confirmpassword" name="confirmpassword" placeholder="password" type="password" class="validate">
+                        <label class="active" for="password" >confirm password</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 <@f.footer></@f.footer>
 </@c.page>

@@ -49,19 +49,24 @@ public class SignUpServiceImpl implements SignUpService {
      * Сохранение пользоватебя в хранилищи;
      */
     @Override
-    public void signUp(UserRegistration userRegistration) {
+    public boolean signUp(UserRegistration userRegistration) {
+        if (repository.findByEmail(userRegistration.getEmail()).isPresent()) {
+            return false;
+        }
+
 
         String hashPassword = passwordEncoder.encode(userRegistration.getPassword()); //Шифруем пароль пользователя
 
         User user = User.builder()  //Конвертируем информацию с внешней формы UserRegistration в полноценного пользователя User;
-                .firstName(userRegistration.getFirstName())
-                .lastName(userRegistration.getLastName())
+//                .firstName(userRegistration.getFirstName())
+//                .lastName(userRegistration.getLastName())
                 .password(hashPassword)
-                .email(userRegistration.getLogin())
+                .email(userRegistration.getEmail())
                 .roles(ImmutableSet.of(Role.USER))
                 .state(State.ACTIVE)
                 .build();
 
         repository.save(user);
+        return true;
     }
 }

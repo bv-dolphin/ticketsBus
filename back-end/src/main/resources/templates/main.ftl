@@ -31,8 +31,28 @@
         <button class=" btn btn-large waves-effect waves-default btn modal-trigger" data-target="modal1" style="margin-left: 220px; margin-top: 70px;">Найти билет</button>
 </div>
 
+    <div class="row" style="margin-left: 200px">
+    <h5 content=""> Забронировать билет </h5>
+    <ul class="collection">
+        <li class="collection-item avatar">
 
- <div class="modal bottom-sheet"  id="modal1">
+            <img src=/static/images/men.jpg class="circle">
+
+            <i class="material-icons">directions_bus</i>
+            <span class="title">Москва - Киев</span>
+            <p>13 авг.
+                <a href="/public/ticket" class="btn waves-effect waves-light pink" data-target="modal2" style="margin-left: 1400px" >Купить
+                    <i class="material-icons right">send</i>
+                </a>
+                <br> 6.00
+            </p>
+        </li>
+    </ul>
+    </div>
+
+
+<!--
+        <div class="modal bottom-sheet"  id="modal1">
      <div class="modal-content">
          <h4> Забронировать билет </h4>
          <ul class="collection">
@@ -96,7 +116,7 @@
 </main>
 
 
-<!-- add jquery script -->
+<!-- add jquery script
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -112,11 +132,11 @@
 
 </script>
 
-<!--materialize script --->
+<!--materialize script -
 
 <script type="text/javascript" src="/static/js/jquery.min.js"></script>
 <script type="text/javascript" src="/static/js/materialize.min.js"></script>
-
+-->
 
 <@f.footer></@f.footer>
 </@c.page>

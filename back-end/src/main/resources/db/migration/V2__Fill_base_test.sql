@@ -116,29 +116,39 @@ insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (8, '2
 insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (9, '2018-01-04 19:42:29', 9, 9);
 insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (10, '2018-03-23 09:07:58', 10, 10);
 
+insert into users_tbl (id, active, email, fist_name, last_name, password, state_enum) values (1, true, 'bmacconneely0@amazon.co.uk', 'Benita', 'MacConneely', '5C8AmwKaltb', 'ACTIVE');
+insert into users_tbl (id, active, email, fist_name, last_name, password, state_enum) values (2, true, 'mjaniak1@drupal.org', 'Mortie', 'Janiak', '0UjHMD3', 'ACTIVE');
+insert into users_tbl (id, active, email, fist_name, last_name, password, state_enum) values (3, true, 'wbillam2@latimes.com', 'Walther', 'Billam', '6VNjzw', 'ACTIVE');
+insert into users_tbl (id, active, email, fist_name, last_name, password, state_enum) values (4, false, 'lcattach3@rakuten.co.jp', 'Lombard', 'Cattach', 'wCiZ3M', 'ACTIVE');
+insert into users_tbl (id, active, email, fist_name, last_name, password, state_enum) values (5, true, 'ehungerford4@google.pl', 'Elizabet', 'Hungerford', 'GWCQ4E', 'ACTIVE');
+insert into users_tbl (id, active, email, fist_name, last_name, password, state_enum) values (6, true, 'gtalby5@dailymotion.com', 'Gussie', 'Talby', '6zYtBsKozGH', 'ACTIVE');
+insert into users_tbl (id, active, email, fist_name, last_name, password, state_enum) values (7, true, 'bkemster6@marriott.com', 'Berky', 'Kemster', 'zvXqwOw', 'ACTIVE');
+insert into users_tbl (id, active, email, fist_name, last_name, password, state_enum) values (8, false, 'fstorie7@craigslist.org', 'Frankie', 'Storie', 'b6DZSiknmX0V', 'ACTIVE');
+insert into users_tbl (id, active, email, fist_name, last_name, password, state_enum) values (9, false, 'ddumbrill8@rambler.ru', 'Dave', 'Dumbrill', 'bjtqhd14', 'ACTIVE');
+insert into users_tbl (id, active, email, fist_name, last_name, password, state_enum) values (10, false, 'esacks9@examiner.com', 'Else', 'Sacks', '53d7Z8dh', 'ACTIVE');
 
-insert into ticket_tbl (id, purchase_date, ticket_number, user_id) values (1, '2018-03-17 23:26:19', '8214', 1);
-insert into ticket_tbl (id, purchase_date, ticket_number, user_id) values (2, '2018-06-06 15:05:57', '8312', 2);
-insert into ticket_tbl (id, purchase_date, ticket_number, user_id) values (3, '2018-05-20 08:33:44', '6286', 3);
-insert into ticket_tbl (id, purchase_date, ticket_number, user_id) values (4, '2018-01-26 10:55:18', '42767', 4);
-insert into ticket_tbl (id, purchase_date, ticket_number, user_id) values (5, '2018-05-11 04:41:44', '3105', 5);
-insert into ticket_tbl (id, purchase_date, ticket_number, user_id) values (6, '2017-12-07 09:01:31', '8887', 6);
-insert into ticket_tbl (id, purchase_date, ticket_number, user_id) values (7, '2018-01-18 04:16:54', '225', 7);
-insert into ticket_tbl (id, purchase_date, ticket_number, user_id) values (8, '2018-06-24 20:33:56', '0817', 8);
-insert into ticket_tbl (id, purchase_date, ticket_number, user_id) values (9, '2018-01-28 08:31:27', '298', 9);
-insert into ticket_tbl (id, purchase_date, ticket_number, user_id) values (10, '2018-07-29 20:22:53', '61306', 10);
+insert into tickets_tbl (id, purchase_date, ticket_number, user_id) values (1, '2018-03-17 23:26:19', '8214', 1);
+insert into tickets_tbl (id, purchase_date, ticket_number, user_id) values (2, '2018-06-06 15:05:57', '8312', 2);
+insert into tickets_tbl (id, purchase_date, ticket_number, user_id) values (3, '2018-05-20 08:33:44', '6286', 3);
+insert into tickets_tbl (id, purchase_date, ticket_number, user_id) values (4, '2018-01-26 10:55:18', '42767', 4);
+insert into tickets_tbl (id, purchase_date, ticket_number, user_id) values (5, '2018-05-11 04:41:44', '3105', 5);
+insert into tickets_tbl (id, purchase_date, ticket_number, user_id) values (6, '2017-12-07 09:01:31', '8887', 6);
+insert into tickets_tbl (id, purchase_date, ticket_number, user_id) values (7, '2018-01-18 04:16:54', '225', 7);
+insert into tickets_tbl (id, purchase_date, ticket_number, user_id) values (8, '2018-06-24 20:33:56', '0817', 8);
+insert into tickets_tbl (id, purchase_date, ticket_number, user_id) values (9, '2018-01-28 08:31:27', '298', 9);
+insert into tickets_tbl (id, purchase_date, ticket_number, user_id) values (10, '2018-07-29 20:22:53', '61306', 10);
 
 
-insert into token_tbl (id, session, user_id) values (1, 'Pooh', 1);
-insert into token_tbl (id, session, user_id) values (2, 'Rozalie', 2);
-insert into token_tbl (id, session, user_id) values (3, 'Jami', 3);
-insert into token_tbl (id, session, user_id) values (4, 'Marris', 4);
-insert into token_tbl (id, session, user_id) values (5, 'Rikki', 5);
-insert into token_tbl (id, session, user_id) values (6, 'Isabel', 6);
-insert into token_tbl (id, session, user_id) values (7, 'Ellette', 7);
-insert into token_tbl (id, session, user_id) values (8, 'Kirbie', 8);
-insert into token_tbl (id, session, user_id) values (9, 'Doloritas', 9);
-insert into token_tbl (id, session, user_id) values (10, 'Andromache', 10);
+insert into tokens_tbl (id, session, user_id) values (1, 'Pooh', 1);
+insert into tokens_tbl (id, session, user_id) values (2, 'Rozalie', 2);
+insert into tokens_tbl (id, session, user_id) values (3, 'Jami', 3);
+insert into tokens_tbl (id, session, user_id) values (4, 'Marris', 4);
+insert into tokens_tbl (id, session, user_id) values (5, 'Rikki', 5);
+insert into tokens_tbl (id, session, user_id) values (6, 'Isabel', 6);
+insert into tokens_tbl (id, session, user_id) values (7, 'Ellette', 7);
+insert into tokens_tbl (id, session, user_id) values (8, 'Kirbie', 8);
+insert into tokens_tbl (id, session, user_id) values (9, 'Doloritas', 9);
+insert into tokens_tbl (id, session, user_id) values (10, 'Andromache', 10);
 
 
 insert into user2roles_tbl (user_id, roles_enum) values (1, 'ADMIN');
@@ -150,18 +160,9 @@ insert into user2roles_tbl (user_id, roles_enum) values (6, 'USER');
 insert into user2roles_tbl (user_id, roles_enum) values (7, 'USER');
 insert into user2roles_tbl (user_id, roles_enum) values (8, 'USER');
 insert into user2roles_tbl (user_id, roles_enum) values (9, 'MANAGER');
-insert into user2roles_tbl (user_id, roles_enum) values (1, 'USER');
+insert into user2roles_tbl (user_id, roles_enum) values (10, 'USER');
 
 
-insert into user_tbl (id, is_active, email, fist_name, last_name, password) values (1, true, 'bmacconneely0@amazon.co.uk', 'Benita', 'MacConneely', '5C8AmwKaltb');
-insert into user_tbl (id, is_active, email, fist_name, last_name, password) values (2, true, 'mjaniak1@drupal.org', 'Mortie', 'Janiak', '0UjHMD3');
-insert into user_tbl (id, is_active, email, fist_name, last_name, password) values (3, true, 'wbillam2@latimes.com', 'Walther', 'Billam', '6VNjzw');
-insert into user_tbl (id, is_active, email, fist_name, last_name, password) values (4, false, 'lcattach3@rakuten.co.jp', 'Lombard', 'Cattach', 'wCiZ3M');
-insert into user_tbl (id, is_active, email, fist_name, last_name, password) values (5, true, 'ehungerford4@google.pl', 'Elizabet', 'Hungerford', 'GWCQ4E');
-insert into user_tbl (id, is_active, email, fist_name, last_name, password) values (6, true, 'gtalby5@dailymotion.com', 'Gussie', 'Talby', '6zYtBsKozGH');
-insert into user_tbl (id, is_active, email, fist_name, last_name, password) values (7, true, 'bkemster6@marriott.com', 'Berky', 'Kemster', 'zvXqwOw');
-insert into user_tbl (id, is_active, email, fist_name, last_name, password) values (8, false, 'fstorie7@craigslist.org', 'Frankie', 'Storie', 'b6DZSiknmX0V');
-insert into user_tbl (id, is_active, email, fist_name, last_name, password) values (9, false, 'ddumbrill8@rambler.ru', 'Dave', 'Dumbrill', 'bjtqhd14');
-insert into user_tbl (id, is_active, email, fist_name, last_name, password) values (10, false, 'esacks9@examiner.com', 'Else', 'Sacks', '53d7Z8dh');
+
 
 
