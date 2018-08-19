@@ -1,3 +1,5 @@
+
+
 create table bus_flight_tbl (
        id bigint not null auto_increment,
         arrival varchar(100),
@@ -19,7 +21,7 @@ create table bus_flight_tbl (
         ticket_id bigint,
         primary key (id),
         foreign key (schedule_id) references schedule_tbl (id),
-      foreign key (ticket_id)   references ticket_tbl (id)
+      foreign key (ticket_id)   references tickets_tbl (id)
     ) engine=MyISAM;
 
     create table bus_route_tbl (
@@ -98,57 +100,43 @@ create table bus_flight_tbl (
 create table users_tbl (
   id  bigint not null auto_increment,
   active boolean,
-  email varchar(100) not null,
+  email varchar(100) not null unique,
   fist_name varchar(100) not null,
   last_name varchar(100) not null,
   password varchar(100) not null,
+  state_enum varchar(50) not null,
+  active_code varchar(256),
   primary key (id)
 );
-
-alter table users_tbl
-  add constraint email_unique unique (email);
 
 -- user2roles_tbl
 
 create table user2roles_tbl (
   user_id bigint not null,
   roles_enum varchar(20) not null,
-  primary key (user_id, roles_enum)
+  primary key (user_id, roles_enum),
+  constraint users2roles_user_fk foreign key (user_id) references users_tbl(id)
 );
 
-alter table user2roles_tbl
-  add constraint users2roles_user_fk foreign key (user_id) references users_tbl(id);
 -- token_tbl
 
-
-create table token_tbl (
+create table tokens_tbl (
   id bigint not null auto_increment,
-  session varchar(100) not null,
+  session varchar(100) not null unique,
   user_id bigint not null,
-  primary key (id)
+  unique (session, user_id),
+  primary key (id),
+  foreign key (user_id) references users_tbl(id)
 );
 
-alter table token_tbl
-  add constraint session_unique unique (session);
-
-alter table token_tbl
-  add constraint token_unique unique (session, user_id);
-
-alter table token_tbl
-  add constraint token_users_fk foreign key (user_id) references users_tbl(id);
 
 -- tickets_tbl
 
 create table tickets_tbl (
   id bigint not null auto_increment,
   purchase_date timestamp not null,
-  ticket_number integer not null,
+  ticket_number integer not null unique ,
   user_id bigint,
-  primary key (id)
+  primary key (id),
+  foreign key (user_id) references users_tbl(id)
 );
-
-alter table tickets_tbl
-  add constraint ticket_number_unique unique (ticket_number);
-
-alter table tickets_tbl
-  add constraint ticket_user_fk foreign key (user_id) references users_tbl(id);

@@ -4,6 +4,6 @@ import com.osprey.studio.domain.forms.UserRegistration;
 
 public interface SignUpService {
 
-    void signUp(UserRegistration userRegistration);
+    boolean signUp(UserRegistration userRegistration);
 
 }

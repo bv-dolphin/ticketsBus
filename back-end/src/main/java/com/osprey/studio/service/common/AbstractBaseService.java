@@ -1,9 +1,11 @@
 package com.osprey.studio.service.common;
 
 import com.osprey.studio.domain.entities.BaseEntity;
+import com.osprey.studio.domain.forms.UserRegistration;
 import com.osprey.studio.repository.common.BaseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.lang.reflect.ParameterizedType;
@@ -11,6 +13,7 @@ import java.util.Optional;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
+@Service
 public abstract class AbstractBaseService<E extends BaseEntity> implements BaseService<E> {
     //получение название типа класса и записываем в строку
     protected final String entityName = ((ParameterizedType) getClass()
@@ -36,11 +39,13 @@ public abstract class AbstractBaseService<E extends BaseEntity> implements BaseS
         return getRepository().existsById(id);
     }
 
+
+
     @Override
     public E create(E entity) {
         logger.info("create");
         checkArgument(entity != null, "Not null " + entityName + " is expected!");
-        entity.setId(null);
+      //  entity.setId(null);
         return getRepository().save(entity);
     }
 
@@ -91,4 +96,6 @@ public abstract class AbstractBaseService<E extends BaseEntity> implements BaseS
             throw new EntityNotFoundException(entityName.getClass() + " with id " + id + " not exists!");
         }
     }
+
+
 }

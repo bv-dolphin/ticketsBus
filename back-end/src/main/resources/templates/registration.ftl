@@ -22,6 +22,7 @@
                     <div class="input-field col s9" style="margin-left: 25px; margin-top: 30px">
                         <i class="tiny material-icons prefix" >person</i>
                         <input  id="email" name="email" placeholder="Email" type="email" class="validate">
+
                         <label class="active" for="login">email</label>
                     </div>
             </div>
@@ -30,7 +31,12 @@
                 <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
                 <div class="input-field col s9" style="margin-left: 25px">
                     <i class="tiny material-icons prefix"  >lock</i>
-                    <input  id="password" name="password" placeholder="password" type="password" class="validate">
+                    <input  id="password" name="password" placeholder="password" type="password" class="validate" >
+                            <#if passwordError??>
+                                <div class="invalid">
+                                    ${passwordError}
+                                </div>
+                            </#if>
                     <label class="active" for="password">password</label>
                 </div>
             </div>
@@ -39,7 +45,7 @@
                 <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
                 <div class="input-field col s9" style="margin-left: 25px">
                     <i class="tiny material-icons prefix"  >lock</i>
-                    <input  id="password" name="password" placeholder="password" type="password" class="validate">
+                    <input  id="confirmpassword" name="confirmpassword" placeholder="password" type="password" class="validate">
                     <label class="active" for="password">password</label>
                 </div>
             </div>
