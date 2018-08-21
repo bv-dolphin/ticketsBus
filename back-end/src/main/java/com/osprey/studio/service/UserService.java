@@ -26,11 +26,13 @@ public class UserService extends AbstractBaseService<User> {
 
     @Override
     protected BaseRepository<User, Long> getRepository() {
+
         return userRepository;
     }
 
 
     public Optional<User> findByEmail(String email) {
+
         return userRepository.findByEmail(email);
     }
 
@@ -89,7 +91,7 @@ public class UserService extends AbstractBaseService<User> {
             user.setEmail(email);
             //Нужно добавить метод отправки активаци почты( Взять у Джастина когда он доделает метод)
            userRepository.save(user);
-           if (userRepository.findByEmail(email) !=null){
+           if (userRepository.findByEmail(email).isPresent()){ // тут советуют использовать isPresent()
                return true;
            }
         }
@@ -98,7 +100,9 @@ public class UserService extends AbstractBaseService<User> {
     /**
      * Изменения пароля пользователя
      */
-    public boolean editPasswordProfile(User user, String oldPassword, String newPassword, String confirmPassword){
+    public boolean editPasswordProfile(
+            User user, String oldPassword, String newPassword, String confirmPassword
+    ){
         boolean isNewPassword= (!StringUtils.isEmpty(newPassword) && newPassword.equals(confirmPassword));
         boolean checkPassword= passwordEncoder.matches(oldPassword, user.getPassword());
         if (isNewPassword && checkPassword){

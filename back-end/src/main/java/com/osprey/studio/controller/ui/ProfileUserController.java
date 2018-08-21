@@ -52,7 +52,8 @@ public class ProfileUserController {
         }
 
         if (!userService.checkUserRole(user, Role.GUEST)) {
-            model.addAttribute("message", "To work on the site you need to activate mail");
+            model.addAttribute
+                    ("message", "To work on the site you need to activate mail");
         }
         if (user.getLastName() !=null){
             model.addAttribute("lastName", user.getLastName());
@@ -77,28 +78,36 @@ public class ProfileUserController {
 
         if (!StringUtils.isEmpty(firstName)){
             if (userService.editFirstNameProfile(user, firstName)){
-                model.addAttribute("firstNameMessage", "Change the First name was successful");
-            }else
-                model.addAttribute("firstNameMessage","changed First name failed, please try again");
+                model.addAttribute
+                        ("firstNameMessage", "Change the First name was successful");
+            }else model.addAttribute
+                        ("firstNameMessage","changed First name failed, please try again");
         }
         if (!StringUtils.isEmpty(lastName)){
             if (userService.editLastNameProfile(user, lastName)){
-                model.addAttribute("lastNameMessage", "Change the Last name was successful");
-            }else
-                model.addAttribute("lastNameMessage","changed Last name failed, please try again");
+                model.addAttribute
+                        ("lastNameMessage", "Change the Last name was successful");
+            }else model.addAttribute
+                        ("lastNameMessage","changed Last name failed, please try again");
         }
         if (!StringUtils.isEmpty(email)){
             if (userService.editEmailProfile(user, email)){
-                model.addAttribute("emailMessage", "Change the email was successful");
-            }else
-                model.addAttribute("emailMessage","changed email failed, please try again. Need activation email");
+                model.addAttribute
+                        ("emailMessage", "Change the email was successful");
+            }else model.addAttribute
+                        ("emailMessage","changed email failed, please try again. " +
+                                "Need activation email");
         }
-        if(!StringUtils.isEmpty(oldPassword) && !StringUtils.isEmpty(newPassword) && !StringUtils.isEmpty(confirmPassword)){
+        if(!StringUtils.isEmpty(oldPassword) && !StringUtils.isEmpty(newPassword)
+                                                && !StringUtils.isEmpty(confirmPassword)){
 
             if (userService.editPasswordProfile(user, oldPassword, newPassword, confirmPassword)){
-                model.addAttribute("passwordMessage", "Change the password was successful");
+                model.addAttribute
+                        ("passwordMessage", "Change the password was successful");
             }else
-                model.addAttribute("passwordMessage","changed password failed, please try again. Need activation email");
+                model.addAttribute
+                        ("passwordMessage","changed password failed, please try again. " +
+                                "Need activation email");
         }
         if (bindingResult.hasErrors()) {
             Map<String, String> errors = ControllerUtils.getErrors(bindingResult);
