@@ -63,7 +63,7 @@ public class SignUpServiceImpl implements SignUpService {
         if (repository.findByEmail(userRegistration.getEmail()).isPresent()) {
             return false;
         }
-
+        userService.generateCode(userRegistration);
 
         String hashPassword = passwordEncoder.encode(userRegistration.getPassword()); //Шифруем пароль пользователя
 
@@ -74,7 +74,7 @@ public class SignUpServiceImpl implements SignUpService {
                 .email(userRegistration.getEmail())
                 .roles(ImmutableSet.of(Role.GUEST))
                 .state(State.ACTIVE)
-                .activationCode(UUID.randomUUID().toString())
+                .activationCode(userRegistration.getActivationCode())
                 .build();
         repository.save(user);
         return true;

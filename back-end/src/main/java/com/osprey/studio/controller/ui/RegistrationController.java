@@ -74,12 +74,13 @@ public class RegistrationController {
     public String activateUser(Model model, @PathVariable String code) {
 
         boolean isActivated = userService.activateUser(code);
-        User user = new User();
+
+
 
         if (isActivated) {
             model.addAttribute("messageType", "success");
             model.addAttribute("message", "User successfully activated");
-            user.setRoles(Collections.singleton(Role.USER));
+
 
         } else {
             model.addAttribute("messageType", "danger");
