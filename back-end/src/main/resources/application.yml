@@ -5,7 +5,7 @@ spring:
     serialization:
      write_dates_as_timestamps: false
   profiles:
-    active: devMysql
+    active: dev
   mandatory-file-encoding: utf-8 #кодировка файлов на диске(при необходимости);
 logging:
   level:
@@ -21,7 +21,7 @@ server:
   port: 8080
 ---
 spring:
-  profiles: devMysql
+  profiles: dev
   jpa:
     hibernate:
         ddl-auto: validate
@@ -36,9 +36,23 @@ spring:
       url: jdbc:mysql://localhost:3306/bus2
       username: root
       password: 12345
+
 ---
 spring:
-  profiles: dev
+    profiles:
+        active: dev
+    mail:
+        host: smtp.gmail.com
+        port: 465
+        username: ospreystudio2018@gmail.com
+        password: osprey2018
+        protocol: smtps
+
+
+
+---
+spring:
+  profiles: devdisable
   jpa:
     hibernate:
         ddl-auto: validate

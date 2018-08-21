@@ -6,10 +6,12 @@ import com.osprey.studio.domain.enums.Role;
 import com.osprey.studio.domain.enums.State;
 import com.osprey.studio.domain.forms.UserRegistration;
 import com.osprey.studio.repository.UserRepository;
+import com.osprey.studio.service.UserService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.UUID;
 
 /**
  * Регистрация пользователя;
@@ -21,9 +23,17 @@ public class SignUpServiceImpl implements SignUpService {
 
     private final PasswordEncoder passwordEncoder;
 
-    public SignUpServiceImpl(UserRepository usersRepository, PasswordEncoder passwordEncoder) {
+    private final UserService userService;
+
+
+
+
+
+    public SignUpServiceImpl(UserRepository usersRepository, PasswordEncoder passwordEncoder, UserService userService, UserService userService1) {
         this.repository = usersRepository;
         this.passwordEncoder = passwordEncoder;
+
+        this.userService = userService1;
     }
 
     /**
@@ -62,10 +72,10 @@ public class SignUpServiceImpl implements SignUpService {
 //                .lastName(userRegistration.getLastName())
                 .password(hashPassword)
                 .email(userRegistration.getEmail())
-                .roles(ImmutableSet.of(Role.USER))
+                .roles(ImmutableSet.of(Role.GUEST))
                 .state(State.ACTIVE)
+                .activationCode(UUID.randomUUID().toString())
                 .build();
-
         repository.save(user);
         return true;
     }

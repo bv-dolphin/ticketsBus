@@ -88,7 +88,7 @@ public class SecurityConfig {
         protected void configure(HttpSecurity http) throws Exception {
             http
                     .authorizeRequests()
-                        .antMatchers("/public/**", "/registration**").permitAll()
+                        .antMatchers("/public/**", "/registration**", "/recovery**", "/activate/*").permitAll()
                         .antMatchers("/static/**").permitAll()
                         .anyRequest().authenticated()
                     .and()
