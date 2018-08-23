@@ -66,5 +66,7 @@ public class User extends BaseEntity {
     public boolean isAdmin() {
         return roles.contains(Role.ADMIN);
     }
+    public boolean isGuest() { return roles.contains(Role.GUEST);
+    }
 
 }

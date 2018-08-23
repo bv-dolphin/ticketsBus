@@ -1,7 +1,5 @@
 package com.osprey.studio.controller.ui;
 
-import com.osprey.studio.domain.entities.User;
-import com.osprey.studio.domain.enums.Role;
 import com.osprey.studio.domain.forms.UserRegistration;
 import com.osprey.studio.service.MailService;
 import com.osprey.studio.service.UserService;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import com.osprey.studio.service.security.SignUpService;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Collections;
 import java.util.Map;
 
 @Controller
@@ -23,13 +20,13 @@ public class RegistrationController {
 
 
 
-    public final SignUpService singlUpService;
+    public final SignUpService signUpService;
     public final UserService userService;
 
 
 
     public RegistrationController(SignUpService singlUpService, MailService mailService, UserService userService) {
-        this.singlUpService = singlUpService;
+        this.signUpService = singlUpService;
 
         this.userService = userService;
     }
@@ -60,7 +57,7 @@ public class RegistrationController {
 
 
             //заходит в метод Sign Up // делаает там проверку на существование юзера
-        if (!singlUpService.signUp(user)) {
+        if (!signUpService.signUp(user)) {
             model.addAttribute("emailError", "Email exists");
             return "registration";
 
