@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import static com.osprey.studio.domain.transfer.UserDto.from;
+import static com.osprey.studio.domain.dto.UserDto.from;
 
 @Controller
 @RequestMapping("/" + SignUpUiController.ROOT_PATH)

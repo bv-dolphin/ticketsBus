@@ -1,11 +1,10 @@
-package com.osprey.studio.domain.transfer;
+package com.osprey.studio.domain.dto;
 
 import com.osprey.studio.domain.entities.User;
 import com.osprey.studio.domain.enums.State;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import com.osprey.studio.service.security.SignUpService;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Collections;
+
 import java.util.Map;
 
 @Controller
@@ -30,7 +30,6 @@ public class RegistrationController {
 
     public RegistrationController(SignUpService singlUpService, MailService mailService, UserService userService) {
         this.singlUpService = singlUpService;
-
         this.userService = userService;
     }
 

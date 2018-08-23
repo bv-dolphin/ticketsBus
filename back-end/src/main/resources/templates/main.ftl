@@ -7,7 +7,7 @@
 <main>
 <div class="row">
 
-    <form  class="col s12" style="margin-top: 250px; margin-left:">
+    <form action="/public/main/search" method="get"  class="col s12" style="margin-top: 250px; margin-left:">
 
         <div class="row" style="margin-left: 200px">
 
@@ -31,6 +31,36 @@
         <button class=" btn btn-large waves-effect waves-default btn modal-trigger" data-target="modal1" style="margin-left: 220px; margin-top: 70px;">Найти билет</button>
 </div>
 
+    <table>
+        <thead>
+        <tr>
+            <th>Откуда</th>
+            <th>Куда</th>
+            <th>Дата</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+        </tr>
+        <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+        </tr>
+        <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <!--
     <div class="row" style="margin-left: 200px">
     <h5 content=""> Забронировать билет </h5>
     <ul class="collection">
@@ -49,7 +79,7 @@
         </li>
     </ul>
     </div>
-
+-->
 
 <!--
         <div class="modal bottom-sheet"  id="modal1">
@@ -116,7 +146,7 @@
 </main>
 
 
-<!-- add jquery script
+<!-- add jquery script -->
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -132,11 +162,11 @@
 
 </script>
 
-<!--materialize script -
+<!--materialize script -->
 
 <script type="text/javascript" src="/static/js/jquery.min.js"></script>
 <script type="text/javascript" src="/static/js/materialize.min.js"></script>
--->
+
 
 <@f.footer></@f.footer>
 </@c.page>
