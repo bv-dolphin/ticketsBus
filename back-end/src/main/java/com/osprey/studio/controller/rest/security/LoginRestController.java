@@ -29,6 +29,7 @@ public class LoginRestController {
      */
     @GetMapping("/login")
     public String isAuthenticated(final @RequestBody HttpServletRequest request) {
+
         return request.getRemoteUser();
     }
 
