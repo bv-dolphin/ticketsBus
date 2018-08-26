@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface CityRepository extends BaseRepository<City, Long> {
 
-    List<City> findByNameContaining(String s);
-}
+  }

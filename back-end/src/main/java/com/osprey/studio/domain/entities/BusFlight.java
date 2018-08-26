@@ -1,11 +1,10 @@
 package com.osprey.studio.domain.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.osprey.studio.service.converter.LocalDateTimeConverter;
+import lombok.*;
 
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -15,6 +14,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Entity
+@Builder
 @Table(name = "bus_flight_tbl")
 @AllArgsConstructor
 @NoArgsConstructor
@@ -37,6 +37,8 @@ public class BusFlight extends BaseEntity {
     @Column(name = "arrival", nullable = true, length = 100,unique = false)
 	private String arrival;
 
+
+    @Convert(converter = LocalDateTimeConverter.class)
     @Column(name = "departure_time", nullable = true)
 	private LocalDateTime departureTime;
 

@@ -4,7 +4,7 @@
 
 <@c.page>
 <@n.navbar></@n.navbar>
-<main>
+<main xmlns="http://www.w3.org/1999/html">
 <div class="row">
 
     <form action="/public/main/search" method="get"  class="col s12" style="margin-top: 250px; margin-left:">
@@ -13,7 +13,7 @@
 
             <div class="input-field col s3" style="margin-right: 100px">
                 <i class="material-icons prefix">directions_bus</i>
-                <input id="icon_prefix" type="text"  class="validate">
+                <input id="icon_prefix" type="text" name="departure" value="${}"  class="validate">
                 <label for="icon_prefix">Откуда</label>
             </div>
             <div class="input-field col s3" style="margin-right: 50px">
@@ -29,37 +29,48 @@
             </div>
         </div>
         <button class=" btn btn-large waves-effect waves-default btn modal-trigger" data-target="modal1" style="margin-left: 220px; margin-top: 70px;">Найти билет</button>
+    </form>
 </div>
-
+<#list busflights as busflight >
     <table>
         <thead>
         <tr>
             <th>Откуда</th>
             <th>Куда</th>
-            <th>Дата</th>
+            <#--<th>Дата</th>-->
         </tr>
         </thead>
 
         <tbody>
         <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-        </tr>
-        <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-        </tr>
-        <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
+            <td>${busflight.departure}</td>
+            <td>${busflight.arrival}</td>
+            <#--<td>${busflight.departureTime}</td>-->
         </tr>
         </tbody>
     </table>
+</#list>
+</main>
+<!-- add jquery script -->
 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.modal').modal();
+    });
+</script>
+<script type="text/javascript">
 
+    $(document).ready(function(){
+        $('.datepicker').datepicker();
+    });
+
+</script>
+<!--materialize script -->
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/materialize.min.js"></script>
+
+<@f.footer></@f.footer>
+</@c.page>
     <!--
     <div class="row" style="margin-left: 200px">
     <h5 content=""> Забронировать билет </h5>
@@ -81,92 +92,7 @@
     </div>
 -->
 
-<!--
-        <div class="modal bottom-sheet"  id="modal1">
-     <div class="modal-content">
-         <h4> Забронировать билет </h4>
-         <ul class="collection">
-             <li class="collection-item avatar">
-
-                 <img src=/static/images/men.jpg class="circle">
-
-                 <i class="material-icons">directions_bus</i>
-                 <span class="title">Москва - Киев</span>
-                 <p>13 авг.
-                  <a href="/public/ticket" class="btn waves-effect waves-light pink" data-target="modal2" style="margin-left: 1400px" >Купить
-                         <i class="material-icons right">send</i>
-                  </a>
-                    <br> 6.00
-                 </p>
-             </li>
-
-             <li class="collection-item avatar">
-                 <img src=/static/images/men.jpg class="circle">
-                 <i class="material-icons">directions_bus</i>
-                 <span class="title">Москва - Киев</span>
-                 <p>13 авг.
-                     <button class="btn waves-effect waves-light pink" type="submit" name="action" style="margin-left: 1400px" >Купить
-                         <i class="material-icons right">send</i>
-                     </button>
-                     <br> 21.00
-                 </p>
-             </li>
-
-             <li class="collection-item avatar">
-                 <img src=/static/images/men.jpg class="circle">
-                 <i class="material-icons">directions_bus</i>
-                 <span class="title">Москва - Киев</span>
-                 <p>13 авг.
-                     <button class="btn waves-effect waves-light pink" type="submit" name="action" style="margin-left: 1400px" >Купить
-                         <i class="material-icons right">send</i>
-                     </button>
-                     <br> 15.00
-                 </p>
-
-             </li>
-             <li class="collection-item avatar">
-                 <img src=/static/images/men.jpg class="circle">
-                 <i class="material-icons">directions_bus</i>
-                 <span class="title">Москва - Киев</span>
-                 <p>13 авг.
-                     <button class="btn waves-effect waves-light pink" type="submit" name="action" style="margin-left: 1400px" >Купить
-                         <i class="material-icons right">send</i>
-                     </button>
-                     <br> 23.00
-                 </p>
-             </li>
-         </ul>
-     </div>
-     <div class="modal-footer">
-         <a href="#" class="btn-flat modal-action modal-close waves-effect waves-default">close</a>
-     </div>
-
- </div>
-
-</main>
+<
 
 
-<!-- add jquery script -->
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.modal').modal();
-    });
-</script>
-
-<script type="text/javascript">
-
-    $(document).ready(function(){
-        $('.datepicker').datepicker();
-    });
-
-</script>
-
-<!--materialize script -->
-
-<script type="text/javascript" src="/static/js/jquery.min.js"></script>
-<script type="text/javascript" src="/static/js/materialize.min.js"></script>
-
-
-<@f.footer></@f.footer>
-</@c.page>

@@ -6,6 +6,9 @@ import com.osprey.studio.repository.common.BaseRepository;
 import com.osprey.studio.service.common.AbstractBaseService;
 import org.springframework.stereotype.Service;
 
+
+import java.util.List;
+
 @Service
 public class BusFlightService extends AbstractBaseService<BusFlight> {
 
@@ -19,4 +22,9 @@ public class BusFlightService extends AbstractBaseService<BusFlight> {
     public BusFlightService(BusFlightRepository repository) {
         this.repository = repository;
     }
+
+    public List<BusFlight> search(String departure, String arrival) {
+        return repository.findByDepartureAndArrival(departure, arrival);
+    }
 }
+

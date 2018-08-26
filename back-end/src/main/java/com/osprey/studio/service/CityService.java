@@ -19,8 +19,4 @@ public class CityService extends AbstractBaseService<City> {
     public CityService(CityRepository repository) {
         this.repository = repository;
     }
-
-    public List<City> search(String s) {
-        return repository.findByNameContaining(s);
     }
-}
