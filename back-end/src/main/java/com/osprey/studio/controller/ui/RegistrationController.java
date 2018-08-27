@@ -90,16 +90,6 @@ public class RegistrationController {
     }
 
 
-
-
-
-
-    @GetMapping("/recovery")
-    public String reminder() {
-        return "recovery";
-    }
-
-
     @GetMapping("/login")
     public String getLoginPage(Authentication authentication, ModelMap model, HttpServletRequest request) {
         if (authentication != null) {

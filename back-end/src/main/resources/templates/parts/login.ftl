@@ -22,7 +22,6 @@
                         <#if error??>
                             <div id="card-alert" class="card red lighten-5 center" role="alert">Invalid Username or Password!</div>
                         </#if>
-
                     <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
                     <div class="input-field col s9" style="margin-left: 25px; margin-top: 30px">
                         <i class="tiny material-icons prefix" >person</i>

@@ -1,5 +1,6 @@
 <#import "parts/common.ftl" as c>
 <#import "parts/login.ftl" as l>
+
 <@c.page>
 <body class="teal">
 <div class="container "  >
@@ -10,6 +11,17 @@
                 <form class="login-form" method="post" action="#">
                     <div class="panel-heading ">
                         <h5 class="card-title center" >Recovery Form</h5>
+                        <#if emailRecoveryError??>
+                            <div id="card-alert" class="card red lighten-5 center" role="alert">${emailRecoveryError}</div>
+                        </#if>
+
+                        <#if userRecoveryError??>
+                            <div id="card-alert" class="card red lighten-5 center" role="alert">${userRecoveryError}</div>
+                        </#if>
+
+                        <#if sendMessageRecovery??>
+                            <div id="card-alert" class="card red lighten-5 center" role="alert">${sendMessageRecovery}</div>
+                        </#if>
                     </div>
 
                     <div class="row" style="margin-top: 30px">
