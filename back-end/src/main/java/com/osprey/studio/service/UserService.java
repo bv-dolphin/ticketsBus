@@ -2,23 +2,19 @@ package com.osprey.studio.service;
 
 import com.osprey.studio.domain.entities.User;
 import com.osprey.studio.domain.enums.Role;
-import com.osprey.studio.domain.enums.State;
 import com.osprey.studio.domain.forms.UserRegistration;
 import com.osprey.studio.repository.UserRepository;
 import com.osprey.studio.repository.common.BaseRepository;
 import com.osprey.studio.service.common.AbstractBaseService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Collections;
 import java.util.Optional;
 import java.util.Set;
-import java.util.UUID;
 
 @Service
 public class UserService extends AbstractBaseService<User> {
@@ -126,6 +122,7 @@ public class UserService extends AbstractBaseService<User> {
             }else
                 model.addAttribute
                         ("passwordMessage","changed password failed, please try again. ");
+              userRepository.save(user);
     }
 
     /**
@@ -140,11 +137,11 @@ public class UserService extends AbstractBaseService<User> {
      * Редактирование своего профиля(имя)
      */
     public boolean editFirstNameProfile(User user, String firstName){
-        if (StringUtils.isEmpty(firstName) || user.getFirstName().equals(firstName)) {
+        if (StringUtils.isEmpty(firstName)) {
             return false;
         }
         user.setFirstName(firstName);
-        userRepository.save(user);
+        //userRepository.save(user);
        // if (userRepository.findByFirstName(firstName) !=null){ }
         return true;
         }
@@ -152,11 +149,11 @@ public class UserService extends AbstractBaseService<User> {
      * Редактирование своего профиля(Фамилия)
      */
     public boolean editLastNameProfile(User user, String lastName){
-        if (StringUtils.isEmpty(lastName) && user.getLastName().equals(lastName)) {
+        if (StringUtils.isEmpty(lastName)) {
             return false;
         }
         user.setLastName(lastName);
-        userRepository.save(user);
+        //userRepository.save(user);
        // if (userRepository.findByLastName(lastName) !=null){ }
         return true;
     }
@@ -165,7 +162,7 @@ public class UserService extends AbstractBaseService<User> {
      * Редактирование своего профиля(почта)+ отправка новую активацию на почту
      */
     public boolean editEmailProfile(User user, String email){
-        if (!StringUtils.isEmpty(email)){
+        if (StringUtils.isEmpty(email)){
             return false;
         }
         String userEmail = user.getEmail();
@@ -178,7 +175,7 @@ public class UserService extends AbstractBaseService<User> {
           /* if (!StringUtils.isEmpty(email)) {
                user.setActivationCode(UUID.randomUUID().toString());
            }*/
-           userRepository.save(user);
+          // userRepository.save(user);
            return true;
        }
           /* if (userRepository.findByEmail(email).isPresent()){ // тут советуют использовать isPresent()
@@ -202,7 +199,7 @@ public class UserService extends AbstractBaseService<User> {
 
         if (isNewPassword && checkPassword){
             user.setPassword(passwordEncoder.encode(newPassword));
-            userRepository.save(user);
+           // userRepository.save(user);
             return true;
         }
         return false;
