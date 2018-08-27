@@ -105,7 +105,6 @@ public class UserService extends AbstractBaseService<User> {
 
 
     public void updateProfile(User user, String firstName, String lastName, String email, String oldPassword, String newPassword, String confirmPassword, Model model) {
-
             if (!editFirstNameProfile(user, firstName)) {
                 model.addAttribute
                         ("firstNameMessage", "changed First name failed, please try again");
@@ -137,12 +136,11 @@ public class UserService extends AbstractBaseService<User> {
         return roles.contains(role);
     }
 
-     /**
+ /*   *//**
      * Редактирование своего профиля(имя)
      */
     public boolean editFirstNameProfile(User user, String firstName){
-
-        if (StringUtils.isEmpty(firstName)) {
+        if (StringUtils.isEmpty(firstName) || user.getFirstName().equals(firstName)) {
             return false;
         }
         user.setFirstName(firstName);
@@ -154,7 +152,7 @@ public class UserService extends AbstractBaseService<User> {
      * Редактирование своего профиля(Фамилия)
      */
     public boolean editLastNameProfile(User user, String lastName){
-        if (StringUtils.isEmpty(lastName)) {
+        if (StringUtils.isEmpty(lastName) && user.getLastName().equals(lastName)) {
             return false;
         }
         user.setLastName(lastName);
@@ -167,7 +165,7 @@ public class UserService extends AbstractBaseService<User> {
      * Редактирование своего профиля(почта)+ отправка новую активацию на почту
      */
     public boolean editEmailProfile(User user, String email){
-        if (StringUtils.isEmpty(email)){
+        if (!StringUtils.isEmpty(email)){
             return false;
         }
         String userEmail = user.getEmail();

@@ -12,35 +12,35 @@
       <form class="col s12">
           <div class="row">
               <div class="input-field col s6">
-                  <input id="firstName" name="firstName" type="text">
-                  <label for="firstName">First Name</label>
+                  <input id="first_name" type="text"
+                         value="${first_name}"
+                         class="validate">
+                  <label for="first_name">First Name</label>
               </div>
               <div class="input-field col s6">
-                  <input id="lastName" name="lastName" type="text">
-                  <label for="lastName">Last Name</label>
+                  <input id="last_name" type="text"
+                         value="${last_name}"
+                         class="validate">
+                  <label for="last_name">Last Name</label>
               </div>
           </div>
           <div class="row">
               <div class="input-field col s5">
-                  <input id="oldPassword" name="oldPassword" type="password" >
-                  <label for="oldPassword">Old password</label>
+                  <input id="password" type="password" class="validate">
+                  <label for="password">Password</label>
               </div>
           </div>
           <div class="row">
               <div class="input-field col s5">
-                  <input id="newPassword" name="newPassword" type="password" >
-                  <label for="password">New password</label>
-              </div>
-          </div>
-          <div class="row">
-              <div class="input-field col s5">
-                  <input id="confirmPassword" name="confirmPassword" type="password" >
+                  <input id="password" type="password" class="validate">
                   <label for="password">Сonfirm Password</label>
               </div>
           </div>
           <div class="row">
               <div class="input-field col s5">
-                  <input id="email" name="email" type="email">
+                  <input id="email" type="email"
+                         value="${email}"
+                         class="validate">
                   <label for="email">Email</label>
               </div>
           </div>
