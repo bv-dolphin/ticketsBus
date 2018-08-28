@@ -3,6 +3,7 @@ package com.osprey.studio.security.details;
 import com.osprey.studio.domain.entities.User;
 import com.osprey.studio.domain.enums.State;
 import lombok.Getter;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -68,4 +69,5 @@ public class UserDetailsImpl implements UserDetails {
     public boolean isEnabled() {
         return user.getState().equals(State.ACTIVE);
     }
+
 }

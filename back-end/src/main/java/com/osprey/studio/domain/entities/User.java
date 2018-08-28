@@ -36,7 +36,7 @@ public class User extends BaseEntity {
 
   //  @NotBlank(message = "errors.user.password.not-null")
 
-    @Column(name = "password", nullable = BUN_NULL, length = LENGTH)
+    @Column(name = "password",nullable = BUN_NULL, length = LENGTH)
     private String password;
 
     @Email(message = "errors.user.email.value.email_not_correct")
@@ -65,6 +65,8 @@ public class User extends BaseEntity {
 
     public boolean isAdmin() {
         return roles.contains(Role.ADMIN);
+    }
+    public boolean isGuest() { return roles.contains(Role.GUEST);
     }
 
 }

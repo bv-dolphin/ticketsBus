@@ -16,6 +16,9 @@
                     <div class="panel-heading ">
                         <h5 class="card-title center" >Login Form</h5>
                     </div>
+                    <#if sendMessageRecovery??>
+                    <div id="card-alert" class="card green lighten-5 center" role="alert">${sendMessageRecovery}</div>
+                    </#if>
                         <#if logout??>
                             <div id="card-alert" class="card green lighten-5 center" role="alert">You've been logged out successfully.</div>
                         </#if>
@@ -47,18 +50,13 @@
             </div>
             <button type="submit" class="btn waves-effect waves-light col s10" style="margin-left: 25px" >Log in</button>
 
-            <div class="row">
-                <div class="input-field col ">
-                    <p class="margin medium-small" style="margin-left: 30px"><a href="/registration">Register Now!</a></p>
-                </div>
-                <div class="input-field col " >
-                    <p class="margin right-align medium-small"><a href="/recovery">Forgot password ?</a></p>
-                </div>
+            <div class="input-field col s12"">
+                <p><a href="/registration" class="margin medium-small">Register Now!</a>
+                <a href="/recovery" class="margin medium-small right">Forgot password ?</a>
+                </p>
             </div>
 
         </div>
     </div>
 </div>
-
-
 </#macro>

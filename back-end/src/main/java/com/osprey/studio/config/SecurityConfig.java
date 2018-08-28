@@ -103,8 +103,8 @@ public class SecurityConfig {
                         .tokenRepository(tokenRepository())
                     .and()
                         .logout()
-                        .deleteCookies("JSESSIONID")
-                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll()
+                    .deleteCookies("JSESSIONID")
+                    .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll()
                         .logoutSuccessUrl("/public/login")
                     .and()
                         .exceptionHandling();
