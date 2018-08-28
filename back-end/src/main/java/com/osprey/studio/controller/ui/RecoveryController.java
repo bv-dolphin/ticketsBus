@@ -41,7 +41,7 @@ public class RecoveryController {
             model.addAttribute
                     ("sendMessageRecovery", "We send new password on your email. " +
                             "After 5 seconds you will be transferred to the login page....");
-            // Thread.sleep(5000);
+             // Thread.sleep(5000);
             } else {
                 model.addAttribute("userRecoveryError", "This email not in base.");
                 return "/recovery";
