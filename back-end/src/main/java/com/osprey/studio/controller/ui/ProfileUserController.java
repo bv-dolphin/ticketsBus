@@ -38,7 +38,7 @@ public class ProfileUserController {
      * Возвращает "lastName"   если есть, можно использовать для инпута
      */
     @GetMapping("/profile")
-    public String profile(Model model, Authentication authentication) {
+    public String profile(Model model,Authentication authentication) {
         if (authentication == null) {
             return "redirect:/public/login";
         }
@@ -90,7 +90,7 @@ public class ProfileUserController {
         userService.updateProfile
                         (user, firstName, lastName, email, oldPassword, newPassword, confirmPassword, model);
 
-        return "profile";
+        return "redirect:/profile";
     }
 
 

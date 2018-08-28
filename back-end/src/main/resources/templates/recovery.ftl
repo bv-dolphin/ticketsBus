@@ -18,10 +18,6 @@
                         <#if userRecoveryError??>
                             <div id="card-alert" class="card red lighten-5 center" role="alert">${userRecoveryError}</div>
                         </#if>
-
-                        <#if sendMessageRecovery??>
-                            <div id="card-alert" class="card red lighten-5 center" role="alert">${sendMessageRecovery}</div>
-                        </#if>
                     </div>
 
                     <div class="row" style="margin-top: 30px">

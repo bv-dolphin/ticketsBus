@@ -11,7 +11,16 @@
             <#if user??>
             <li><a href="/profile">Личный кабинет</a></li>
             <li><input type="hidden" name="_csrf" value="${_csrf.token}" />
-                <a type="submit" href="/logout">Выйти</a></li>
+                <a href="/logout">Выйти</a></li>
+            <li><label><h7>${user?ifExists}</h7></label></li>
+           <#-- <form action="/logout" method="post" >
+                       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                         <button class="waves-effect waves-light btn-large blue-grey"
+                                 type="submit">
+                             Выйти
+                             <i class="material-icons right">exit_to_app</i></button>
+                   </form>-->
+
             <#else>
                 <li ><a href="/public/login">Войти на сайт</a></li>
             </#if>

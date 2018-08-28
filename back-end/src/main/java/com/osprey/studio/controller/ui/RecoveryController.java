@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 
 @Controller
 public class RecoveryController {
@@ -39,14 +37,13 @@ public class RecoveryController {
             User user = userService.findByEmail(email).get();
             userService.sendMessagePasswordRecovery(user);
             model.addAttribute
-                    ("sendMessageRecovery", "We send new password on your email. " +
-                            "After 5 seconds you will be transferred to the login page....");
+                    ("sendMessageRecovery", "We send new password on your email.");
              // Thread.sleep(5000);
             } else {
                 model.addAttribute("userRecoveryError", "This email not in base.");
                 return "/recovery";
             }
 
-        return "redirect:/login";
+        return "login";
     }
 }

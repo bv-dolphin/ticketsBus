@@ -25,8 +25,8 @@ public class RegistrationController {
 
 
 
-    public RegistrationController(SignUpService singlUpService, MailService mailService, UserService userService) {
-        this.signUpService = singlUpService;
+    public RegistrationController(SignUpService singUpService, MailService mailService, UserService userService) {
+        this.signUpService = singUpService;
 
         this.userService = userService;
     }
@@ -83,8 +83,6 @@ public class RegistrationController {
             model.addAttribute("messageType", "danger");
             model.addAttribute("message", "Activation code is not found!");
         }
-
-
 
         return "login";
     }
