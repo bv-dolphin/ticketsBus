@@ -68,7 +68,7 @@ public class UserService extends AbstractBaseService<User> {
         }
     }
 
-    public void sendMessagePasswordRecovery(String email, User user) {
+    public void sendMessagePasswordRecovery(User user) {
 
         if (!StringUtils.isEmpty(user.getEmail())) {   //В SpringUtils есть метод isEmpty который проверяет что строчки не равны null и непустые
             String newPassword = UUID.randomUUID().toString().substring(24, 36);

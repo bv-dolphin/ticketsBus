@@ -37,7 +37,7 @@ public class RecoveryController {
 
         if (userService.findByEmail(email).isPresent()){
             User user = userService.findByEmail(email).get();
-            userService.sendMessagePasswordRecovery(email, user);
+            userService.sendMessagePasswordRecovery(user);
             model.addAttribute
                     ("sendMessageRecovery", "We send new password on your email. " +
                             "After 5 seconds you will be transferred to the login page....");
