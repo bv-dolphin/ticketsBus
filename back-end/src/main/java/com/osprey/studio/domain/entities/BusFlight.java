@@ -1,6 +1,6 @@
 package com.osprey.studio.domain.entities;
 
-import com.osprey.studio.service.converter.LocalDateTimeConverter;
+
 import lombok.*;
 
 import javax.persistence.Column;
@@ -38,7 +38,7 @@ public class BusFlight extends BaseEntity {
 	private String arrival;
 
 
-    @Convert(converter = LocalDateTimeConverter.class)
+
     @Column(name = "departure_time", nullable = true)
 	private LocalDateTime departureTime;
 

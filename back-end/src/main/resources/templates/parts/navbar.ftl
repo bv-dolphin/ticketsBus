@@ -1,5 +1,6 @@
-<#macro navbar>
+
 <#include "security.ftl">
+<#macro navbar>
  <nav class="teal">
     <div class="nav-wrapper">
         <div class="container">
@@ -8,12 +9,14 @@
             <li><a href="/public/main">Купить билет</a></li>
             <li><a href="/public/info">Информация</a></li>
             <!--   <li><a href=/staff">Персонал</a></li> -->
-            <#if user??>
             <li><a href="/profile">Личный кабинет</a></li>
-            <li><input type="hidden" name="_csrf" value="${_csrf.token}" />
-                <a type="submit" href="/logout">Выйти</a></li>
-            <#else>
-                <li ><a href="/public/login">Войти на сайт</a></li>
+               <li style="margin-left: 150px">
+                   <div><#if user??>${name}<#else> Please, login</div>
+                   <form action="/logout" method="post" >
+                       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                         <button class="waves-effect waves-light btn-large blue-grey" type="submit"><#if user??> Выйти <#else> Войти </#if> <i class="material-icons right">exit_to_app</i></button>
+                   </form>
+               </li>
             </#if>
         </ul>
         </div>

@@ -7,6 +7,7 @@ import com.osprey.studio.service.common.AbstractBaseService;
 import org.springframework.stereotype.Service;
 
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -23,8 +24,11 @@ public class BusFlightService extends AbstractBaseService<BusFlight> {
         this.repository = repository;
     }
 
-    public List<BusFlight> search(String departure, String arrival) {
-        return repository.findByDepartureAndArrival(departure, arrival);
+    public List<BusFlight> search(String departure, String arrival, LocalDateTime departureTime) {
+        LocalDateTime departureTimeTho=departureTime.plusDays(1);
+        return repository.findByDepartureAndArrivalAndDepartureTime(departure, arrival, departureTime);
     }
+
+
 }
 
