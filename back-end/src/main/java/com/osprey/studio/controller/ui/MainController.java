@@ -1,8 +1,6 @@
 package com.osprey.studio.controller.ui;
 
 
-import com.osprey.studio.domain.entities.User;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
