@@ -25,8 +25,9 @@ public class BusFlightService extends AbstractBaseService<BusFlight> {
     }
 
     public List<BusFlight> search(String departure, String arrival, LocalDateTime departureTime) {
-        LocalDateTime departureTimeTho=departureTime.plusDays(1);
-        return repository.findByDepartureAndArrivalAndDepartureTime(departure, arrival, departureTime);
+        LocalDateTime departureTimeTho = departureTime.plusDays(1);
+
+        return repository.findByDepartureAndArrivalAndDepartureTimeBetween(departure, arrival, departureTime, departureTimeTho);
     }
 
 

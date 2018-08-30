@@ -40,7 +40,7 @@ public class MainController {
                           Model model) {
 //
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        departureTime+=" 00:00:00";
+        departureTime+=" 00:00:00";  // departureTime = departureTime + " 00:00:00";
         LocalDateTime date = LocalDateTime.parse(departureTime, formatter);
 
 

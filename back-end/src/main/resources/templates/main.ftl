@@ -24,7 +24,7 @@
             </div>
             <div class="input-field col s2" style="margin-right: 50px">
                 <i class="material-icons prefix">today</i>
-                <input id="icon_telephone" type="date" name="departureTime" class="datepicker">
+                <input id="icon_telephone" type="date" name="departureTime"> <!--class="datepicker"> -->
                 <label for="icon_telephone">Дата</label>
             </div>
         </div>
