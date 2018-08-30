@@ -9,7 +9,7 @@
         <div class="container">
             <div class="card" style="color:#009688; margin-top:50px; "  >
                 <div class="card-content" >
-                    <h3>Информация</h3>
+                    <h3>Test.Информация</h3>
 
                     <ul class="collapsible">
                         <li>
