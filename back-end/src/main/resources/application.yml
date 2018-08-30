@@ -18,7 +18,7 @@ jwt:
 ---
 #порт по умолчанию;
 server:
-  port: 80
+  port: 8585
 ---
 spring:
   profiles: dev
