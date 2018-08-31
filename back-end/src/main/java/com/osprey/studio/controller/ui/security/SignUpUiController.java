@@ -34,5 +34,4 @@ public class SignUpUiController {
         return "redirect:/login";
     }
 
-
 }

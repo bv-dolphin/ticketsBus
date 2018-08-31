@@ -1,19 +1,18 @@
 package com.osprey.studio.controller.ui;
 
 import com.osprey.studio.domain.forms.UserRegistration;
+import com.osprey.studio.service.MailService;
+import com.osprey.studio.service.UserService;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import com.osprey.studio.service.security.SignUpService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
-import java.util.Optional;
 
 @Controller
 
@@ -21,10 +20,15 @@ public class RegistrationController {
 
 
 
-    public final SignUpService singlUpService;
+    public final SignUpService signUpService;
+    public final UserService userService;
 
-    public RegistrationController(SignUpService singlUpService) {
-        this.singlUpService = singlUpService;
+
+
+    public RegistrationController(SignUpService singUpService, MailService mailService, UserService userService) {
+        this.signUpService = singUpService;
+
+        this.userService = userService;
     }
 
 
@@ -34,7 +38,7 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String createUser(@RequestParam UserRegistration user, BindingResult bindingResult, Model model) {
+    public String createUser(@ModelAttribute UserRegistration user, BindingResult bindingResult, Model model) {
 
 
         if (user.getPassword() == null) {
@@ -53,20 +57,34 @@ public class RegistrationController {
 
 
             //заходит в метод Sign Up // делаает там проверку на существование юзера
-        if (!singlUpService.signUp(user)) {
+        if (!signUpService.signUp(user)) {
             model.addAttribute("emailError", "Email exists");
             return "registration";
 
         }
+        userService.sendMessage(user);
 
         return "redirect:/login";
-
     }
 
+    @GetMapping("/activate/{code}")
+    public String activateUser(Model model, @PathVariable String code) {
 
-    @GetMapping("/recovery")
-    public String reminder() {
-        return "recovery";
+        boolean isActivated = userService.activateUser(code);
+
+
+
+        if (isActivated) {
+            model.addAttribute("messageType", "success");
+            model.addAttribute("message", "User successfully activated");
+
+
+        } else {
+            model.addAttribute("messageType", "danger");
+            model.addAttribute("message", "Activation code is not found!");
+        }
+
+        return "login";
     }
 
 
@@ -78,6 +96,7 @@ public class RegistrationController {
         if (request.getParameterMap().containsKey("error")) {
             model.addAttribute("error", true);
         }
+
         return "login";
     }
 

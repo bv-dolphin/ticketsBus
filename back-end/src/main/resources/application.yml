@@ -5,8 +5,8 @@ spring:
     serialization:
      write_dates_as_timestamps: false
   profiles:
-    active: devMysql
-  #mandatory-file-encoding: utf-8 #кодировка файлов на диске(при необходимости);
+    active: dev
+    mandatory-file-encoding: utf-8 #кодировка файлов на диске(при необходимости);
 logging:
   level:
     ROOT: INFO
@@ -18,27 +18,41 @@ jwt:
 ---
 #порт по умолчанию;
 server:
-  port: 8080
+  port: 8585
 ---
 spring:
-  profiles: devMysql
+  profiles: dev
   jpa:
     hibernate:
         ddl-auto: validate
     properties.hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
         temp.use_jdbc_metadata_defaults: false
-        show_sql: true
+        show_sql: false
         format_sql: true
         enable_lazy_load_no_trans: true #If you would like to keep Lazy Load and you are using Spring Boot
   datasource:
       driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/bus2
+      url: jdbc:mysql://146.66.162.195:3306/bus
       username: root
       password: 12345
+
 ---
 spring:
-  profiles: dev
+    profiles:
+        active: dev
+    mail:
+        host: smtp.gmail.com
+        port: 465
+        username: ospreystudio2018@gmail.com
+        password: osprey2018
+        protocol: smtps
+
+
+
+---
+spring:
+  profiles: devdisable
   jpa:
     hibernate:
         ddl-auto: validate

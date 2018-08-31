@@ -1,3 +1,9 @@
+create table persistent_logins (
+  username varchar(64) not null,
+  series varchar(64) primary key,
+  token varchar(64) not null,
+  last_used timestamp not null)
+  engine=MyISAM;
 
 
 create table bus_flight_tbl (
@@ -101,8 +107,8 @@ create table users_tbl (
   id  bigint not null auto_increment,
   active boolean,
   email varchar(100) not null unique,
-  fist_name varchar(100) not null,
-  last_name varchar(100) not null,
+  fist_name varchar(100) ,
+  last_name varchar(100) ,
   password varchar(100) not null,
   state_enum varchar(50) not null,
   active_code varchar(256),

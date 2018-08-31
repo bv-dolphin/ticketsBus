@@ -1,16 +1,16 @@
 package com.osprey.studio.domain.forms;
 
-import com.osprey.studio.domain.entities.User;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
-public class UserRegistration  {
+public class UserRegistration {
 
       private String email;
       private String password;
       private String confirmpassword;
+      private String activationCode;
 
 
 }

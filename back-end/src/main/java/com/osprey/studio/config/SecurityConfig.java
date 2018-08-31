@@ -49,7 +49,7 @@ public class SecurityConfig {
         protected void configure(HttpSecurity http) throws Exception {
             http
                     .userDetailsService(detailsService)
-                    .antMatcher("/api/*")
+                    .antMatcher("/api/public/*")
                     .csrf()
                     .disable()
                     .headers()
@@ -88,7 +88,7 @@ public class SecurityConfig {
         protected void configure(HttpSecurity http) throws Exception {
             http
                     .authorizeRequests()
-                        .antMatchers("/public/**", "/registration**").permitAll()
+                        .antMatchers("/public/**", "/registration**", "/recovery**", "/activate/*").permitAll()
                         .antMatchers("/static/**").permitAll()
                         .anyRequest().authenticated()
                     .and()
@@ -103,8 +103,8 @@ public class SecurityConfig {
                         .tokenRepository(tokenRepository())
                     .and()
                         .logout()
-                        .deleteCookies("JSESSIONID")
-                        .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll()
+                    .deleteCookies("JSESSIONID")
+                    .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll()
                         .logoutSuccessUrl("/public/login")
                     .and()
                         .exceptionHandling();
