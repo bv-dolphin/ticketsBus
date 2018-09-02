@@ -1,0 +1,40 @@
+
+.wrapper {
+
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+    grid-gap: 10px;
+    background-color: #fff;
+    color: #444;
+
+
+}
+
+.box {
+    background-color: #009688;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 80%;
+
+
+
+}
+.box:hover {
+    background-color: deeppink;
+}
+
+div.container6 {
+
+ justify-content: center
+}
+
+.seatSelected {
+    background-color: deeppink
+}
+.seat p {
+    display: inline;
+}
+
+
+

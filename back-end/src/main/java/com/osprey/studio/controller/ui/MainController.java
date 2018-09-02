@@ -67,4 +67,10 @@ public class MainController {
 
     @GetMapping("/contacts")
     public String contacts() {return "contacts"; }
-}
+
+    @GetMapping("/test")
+    public String test() {
+        return "test";
+        }
+    }
+
