@@ -1,2 +1,2 @@
 # ticketsBus
-Sale of tickets for the bus
+Sale of tickets for the bus.
