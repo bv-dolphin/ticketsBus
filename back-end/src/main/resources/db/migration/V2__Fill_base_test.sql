@@ -1,24 +1,24 @@
 
 insert into bus_flight_tbl (id, arrival, arrival_time, departure, departure_time, flight_name, flight_number, km, price)
- values (1, 'Kalahang', '2017-08-20 05:42:28', 'Kourou', '2017-08-20 05:42:28', 'Sonsing', 1, 1, 0.89);
+ values (1, 'Kalahang', '2018-08-20 05:42:28', 'Kourou', '2018-08-20 05:42:28', 'Sonsing', 1, 1, 0.89);
 insert into bus_flight_tbl (id, arrival, arrival_time, departure, departure_time, flight_name, flight_number, km, price)
-values (2, 'Capivari', '2017-08-20 05:42:28', 'Tongyangdao', '2017-08-20 05:42:28', 'Flowdesk', 2, 2, 5.56);
+values (2, 'Capivari', '2018-08-20 05:42:28', 'Tongyangdao', '2018-08-20 05:42:28', 'Flowdesk', 2, 2, 5.56);
 insert into bus_flight_tbl (id, arrival, arrival_time, departure, departure_time, flight_name, flight_number, km, price)
- values (3, 'AlMa', '2017-08-20 05:42:28', 'Oslo', '2017-08-20 05:42:28', 'Opela', 3, 3, 9.48);
+ values (3, 'AlMa', '2018-08-20 05:42:28', 'Oslo', '2018-08-20 05:42:28', 'Opela', 3, 3, 9.48);
 insert into bus_flight_tbl (id, arrival, arrival_time, departure, departure_time, flight_name, flight_number, km, price)
- values (4, 'Taunan', '2017-08-20 05:42:28', 'Codrington', '2017-08-20 05:42:28', 'Matsoft', 4, 4, 8.91);
+ values (4, 'Taunan', '2018-08-20 05:42:28', 'Codrington', '2018-08-20 05:42:28', 'Matsoft', 4, 4, 8.91);
 insert into bus_flight_tbl (id, arrival, arrival_time, departure, departure_time, flight_name, flight_number, km, price)
- values (5, 'JosefvDl', '2017-08-20 05:42:28', 'Ayna', '2017-08-20 05:42:28', 'Y-Solowarm', 5, 5, 5.12);
+ values (5, 'JosefvDl', '2018-08-20 05:42:28', 'Ayna', '2018-08-20 05:42:28', 'Y-Solowarm', 5, 5, 5.12);
 insert into bus_flight_tbl (id, arrival, arrival_time, departure, departure_time, flight_name, flight_number, km, price)
- values (6, 'Marr', '2017-08-20 05:42:28', 'Curuggoong', '2017-08-20 05:42:28', 'Zamit', 6, 6, 6.62);
+ values (6, 'Marr', '2018-08-20 05:42:28', 'Curuggoong', '2018-08-20 05:42:28', 'Zamit', 6, 6, 6.62);
 insert into bus_flight_tbl (id, arrival, arrival_time, departure, departure_time, flight_name, flight_number, km, price)
- values (7, 'Shiqiao', '2017-08-20 05:42:28', 'Wahawaha', '2017-08-20 05:42:28', 'Bigtax', 7, 7, 8.09);
+ values (7, 'Shiqiao', '2018-08-20 05:42:28', 'Wahawaha', '2018-08-20 05:42:28', 'Bigtax', 7, 7, 8.09);
 insert into bus_flight_tbl (id, arrival, arrival_time, departure, departure_time, flight_name, flight_number, km, price)
- values (8, 'Huze', '2017-08-20 05:42:28', 'Suqiaoxiang', '2017-08-20 05:42:28', 'Y-Solowarm', 8, 8, 1.25);
+ values (8, 'Huze', '2018-08-20 05:42:28', 'Suqiaoxiang', '2018-08-20 05:42:28', 'Y-Solowarm', 8, 8, 1.25);
 insert into bus_flight_tbl (id, arrival, arrival_time, departure, departure_time, flight_name, flight_number, km, price)
- values (9, 'Gourcy', '2017-08-20 05:42:28', 'Baiquan', '2017-08-20 05:42:28', 'Keylex', 9, 9, 3.23);
+ values (9, 'Gourcy', '2018-08-20 05:42:28', 'Baiquan', '2018-08-20 05:42:28', 'Keylex', 9, 9, 3.23);
 insert into bus_flight_tbl (id, arrival, arrival_time, departure, departure_time, flight_name, flight_number, km, price)
-values (10, 'Kaffrine', '2017-08-20 05:42:28', 'Lidun', '2017-08-20 05:42:28', 'Daltfresh', 10, 10, 7.32);
+values (10, 'Kaffrine', '2018-08-20 05:42:28', 'Lidun', '2018-08-20 05:42:28', 'Daltfresh', 10, 10, 7.32);
 
 
 insert into bus_landing_tbl (id, place_number, schedule_id, ticket_id) values (1, 1, 1, 1);

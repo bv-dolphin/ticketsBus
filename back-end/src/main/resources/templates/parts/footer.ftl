@@ -18,15 +18,9 @@
         </div>
     </div>
     <div class="footer-copyright" >
-
         <span style="margin-left: 200px">© 2018 Osprey Studio</span>
-
          <img src="https://image.ibb.co/fTSyWU/Osprey_perched_showing_talons1.png" alt="" width="30" height="50"  style="margin-left: 1100px">
             <a class="grey-text text-lighten-4 " href="#!" style="margin-right: 300px">Osprey Studio Link</a>
-
-
-
-
     </div>
 </footer>
 </#macro>

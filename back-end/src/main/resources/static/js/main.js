@@ -1,3 +1,4 @@
+/*
 
 var busApi = Vue.resource('/bus{/id}');
 
@@ -17,4 +18,4 @@ var app = new Vue({
     data: {
         bus: []
     }
-});
+});*/

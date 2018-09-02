@@ -44,7 +44,7 @@ public class ProfileUserController {
         }
         UserDetailsImpl details = (UserDetailsImpl) authentication.getPrincipal();
         User user = details.getUser();
-        model.addAttribute("email", user.getEmail());
+        //model.addAttribute("email", user.getEmail());
         if (userService.checkUserRole(user, Role.GUEST)) {
             model.addAttribute
                     ("messageNotActiveEmail",
@@ -60,7 +60,6 @@ public class ProfileUserController {
         if (!StringUtils.isEmpty(user.getLastName())){
             model.addAttribute("last_name", user.getLastName());
         }
-
         return "profile";
     }
    /**
