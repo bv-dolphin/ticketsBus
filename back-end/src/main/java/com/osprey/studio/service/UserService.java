@@ -15,7 +15,6 @@ import org.springframework.util.StringUtils;
 import java.util.Collections;
 import java.util.Optional;
 import java.util.Set;
-import java.util.UUID;
 
 @Service
 public class UserService extends AbstractBaseService<User> {
@@ -106,6 +105,7 @@ public class UserService extends AbstractBaseService<User> {
             return false;
         }
         user.setActivationCode(null); // Означает что пользователь подтвердил свой почтовый ящик
+        //TODO Илья предлагает проверку на наличие ролей, проверка о у него естещё какая-то роль кроме USER
         user.setRoles(Collections.singleton(Role.USER));
         userRepository.save(user);
 

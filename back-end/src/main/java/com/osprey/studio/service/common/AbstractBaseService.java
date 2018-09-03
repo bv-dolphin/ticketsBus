@@ -1,6 +1,7 @@
 package com.osprey.studio.service.common;
 
 import com.osprey.studio.domain.entities.BaseEntity;
+import com.osprey.studio.domain.entities.City;
 import com.osprey.studio.domain.forms.UserRegistration;
 import com.osprey.studio.repository.common.BaseRepository;
 import org.slf4j.Logger;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 import java.util.Optional;
 
 import static com.google.common.base.Preconditions.checkArgument;
@@ -96,6 +98,5 @@ public abstract class AbstractBaseService<E extends BaseEntity> implements BaseS
             throw new EntityNotFoundException(entityName.getClass() + " with id " + id + " not exists!");
         }
     }
-
 
 }

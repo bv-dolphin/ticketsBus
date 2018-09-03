@@ -3,14 +3,20 @@ package com.osprey.studio.controller.ui;
 
 import com.osprey.studio.domain.entities.BusFlight;
 import com.osprey.studio.service.BusFlightService;
+
 import org.springframework.format.annotation.DateTimeFormat;
+
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 import java.time.LocalDate;
+
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -67,4 +73,10 @@ public class MainController {
 
     @GetMapping("/contacts")
     public String contacts() {return "contacts"; }
-}
+
+    @GetMapping("/test")
+    public String test() {
+        return "test";
+        }
+    }
+

@@ -2,6 +2,7 @@
 <#import "parts/footer.ftl" as f>
 
 <@c.page>
+
 <main xmlns="http://www.w3.org/1999/html">
     <div class="row">
 
@@ -55,8 +56,10 @@
 No buses
 </#if>
 
+
 </main>
 <!-- add jquery script -->
+
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -74,6 +77,7 @@ No buses
 
 
     <@f.footer></@f.footer>
+
 </@c.page>
     <!--
     <div class="row" style="margin-left: 200px">
@@ -92,4 +96,13 @@ No buses
         </li>
     </ul>
     </div>
+
 -->
+
+
+
+
+
+
+
+

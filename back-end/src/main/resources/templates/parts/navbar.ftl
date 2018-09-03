@@ -1,5 +1,6 @@
-<#macro navbar>
+
 <#include "security.ftl">
+<#macro navbar>
  <nav class="teal">
     <div class="nav-wrapper">
         <div class="container">
@@ -8,12 +9,14 @@
             <li><a href="/public/main">Купить билет</a></li>
             <li><a href="/public/info">Информация</a></li>
             <!--   <li><a href=/staff">Персонал</a></li> -->
+
             <#if details??>
             <li><a href="/profile">Личный кабинет</a></li>
             <li><input type="hidden" name="_csrf" value="${_csrf.token}" />
                 <a href="/logout">Выйти</a></li>
             <#else>
                 <li ><a href="/public/login">Войти на сайт</a></li>
+
             </#if>
         </ul>
         </div>
