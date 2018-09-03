@@ -19,6 +19,7 @@ import java.time.LocalDate;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 
 
@@ -44,15 +45,18 @@ public class MainController {
                           @RequestParam String arrival,
                           @RequestParam String departureTime,
                           Model model) {
-//
+
+        List<BusFlight> busflights = null;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         departureTime+=" 00:00:00";  // departureTime = departureTime + " 00:00:00";
-        LocalDateTime date = LocalDateTime.parse(departureTime, formatter);
 
+        try {
+            LocalDateTime date = LocalDateTime.parse(departureTime, formatter);
+            busflights = busFlightService.search(departure, arrival, date);
+        }catch (DateTimeParseException e){
+            model.addAttribute("dataerror", "Invalid date entered");
+        }
 
-        List<BusFlight> busflights = busFlightService.search(departure, arrival, date);
-
-//
         if (busflights != null) {
             model.addAttribute("busflights", busflights);
         } else {
