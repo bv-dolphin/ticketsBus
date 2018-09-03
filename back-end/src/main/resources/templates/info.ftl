@@ -3,7 +3,6 @@
 <#import "parts/footer.ftl" as f>
 
 <@c.page>
-    <@n.navbar></@n.navbar>
 <main>
     <div id="test1" class="col s12">
         <div class="container">

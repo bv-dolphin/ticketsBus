@@ -3,15 +3,18 @@ package com.osprey.studio.controller.ui;
 import com.osprey.studio.domain.forms.UserRegistration;
 import com.osprey.studio.service.MailService;
 import com.osprey.studio.service.UserService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import com.osprey.studio.service.security.SignUpService;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.Map;
 
 @Controller
@@ -38,31 +41,31 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String createUser(@ModelAttribute UserRegistration user, BindingResult bindingResult, Model model) {
-
-
-        if (user.getPassword() == null) {
-            model.addAttribute("passwordError", "Password cannot be empty!");
-
+    public String createUser(
+            @RequestParam("confirmPassword") String passwordConfirm,
+            @Valid UserRegistration user,
+                             BindingResult bindingResult,
+                             Model model)
+    {
+        if (StringUtils.isEmpty(passwordConfirm)){
+            model.addAttribute("confirmPasswordError", "Confirm password cannot be empty");
         }
 
-        if (!user.getPassword().equals(user.getConfirmpassword())) {
+        assert user.getPassword() != null;
+        if (user.getPassword() != null & !user.getPassword().equals(passwordConfirm)) {
             model.addAttribute("confirmPasswordError", "Password are different");
+            return "registration";
+        }
+
+        if (!signUpService.signUp(user)) {
+            model.addAttribute("emailError", "Email exists");
         }
 
         if (bindingResult.hasErrors()) {
             Map<String, String> errors = ControllerUtils.getErrors(bindingResult);
             model.mergeAttributes(errors);
-            return "registration"; }
-
-
-            //заходит в метод Sign Up // делаает там проверку на существование юзера
-        if (!signUpService.signUp(user)) {
-            model.addAttribute("emailError", "Email exists");
             return "registration";
-
         }
-        userService.sendMessage(user);
 
         return "redirect:/login";
     }

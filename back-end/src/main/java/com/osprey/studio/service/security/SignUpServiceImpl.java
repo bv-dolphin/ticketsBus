@@ -9,6 +9,7 @@ import com.osprey.studio.repository.UserRepository;
 import com.osprey.studio.service.UserService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.PostConstruct;
 import java.util.UUID;
@@ -24,9 +25,6 @@ public class SignUpServiceImpl implements SignUpService {
     private final PasswordEncoder passwordEncoder;
 
     private final UserService userService;
-
-
-
 
 
     public SignUpServiceImpl(UserRepository usersRepository, PasswordEncoder passwordEncoder, UserService userService, UserService userService1) {
@@ -59,8 +57,8 @@ public class SignUpServiceImpl implements SignUpService {
      * Сохранение пользоватебя в хранилищи;
      */
     @Override
-    public boolean signUp(UserRegistration userRegistration) {
-        if (repository.findByEmail(userRegistration.getEmail()).isPresent()) {
+    public boolean signUp(User userRegistration) {
+        if (StringUtils.isEmpty(userRegistration.getEmail()) || repository.findByEmail(userRegistration.getEmail()).isPresent()) {
             return false;
         }
         userService.generateCode(userRegistration);
@@ -76,6 +74,16 @@ public class SignUpServiceImpl implements SignUpService {
                 .state(State.ACTIVE)
                 .activationCode(userRegistration.getActivationCode())
                 .build();
+
+      String message = String.format(
+                "Привет, %s \n" + "Доббро пожаловать на наш сайт One Click Bus. " +
+                        "Пожалуйста активируйте ваш аккаунт по сслыке http://localhost:8080/activate/%s",
+                user.getEmail(),
+                user.getActivationCode()
+      );
+      String titleMassage = "Activation code!";
+
+        userService.sendMessage(user, message, titleMassage);
         repository.save(user);
         return true;
     }
