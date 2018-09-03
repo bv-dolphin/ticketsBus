@@ -63,14 +63,10 @@ No buses
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('.modal').modal();
-    });
-</script>
-<script type="text/javascript">
-    $(document).ready(function(){
         $('.datepicker').datepicker();
     });
 </script>
+
 <!--materialize script -->
 <script type="text/javascript" src="/static/js/jquery.min.js"></script>
 <script type="text/javascript" src="/static/js/materialize.min.js"></script>

@@ -18,7 +18,7 @@ jwt:
 ---
 #порт по умолчанию;
 server:
-  port: 8585
+  port: 8080
 ---
 spring:
   profiles: dev
@@ -34,19 +34,18 @@ spring:
   datasource:
       driverClassName: com.mysql.jdbc.Driver
 
-      url: jdbc:mysql://146.66.162.195:3306/bus
-      username: root
-      password: 12345
-
+      url: ${FT_BD_URL}
+      username: ${FT_BD_USERNAME}
+      password: ${FT_BD_PASSWORD}
 ---
 spring:
     profiles:
         active: dev
     mail:
-        host: ${FT_MAIL_SMTP_HOST}
-        port: ${FT_MAIL_SMTP_PORT}
-        username: ${FT_MAIL_SMTP_USERNAME}
-        password: ${FT_MAIL_SMTP_PASSWORD}
+        host: smtp.gmail.com
+        port: 465
+        username: ospreystudio2018@gmail.com
+        password: osprey2018
         protocol: smtps
 ---
 spring:
