@@ -1,50 +1,108 @@
 <#import "parts/common.ftl" as c>
-<#import "parts/navbar.ftl" as n>
-<#import "parts/footer.ftl" as f>
+<#include "parts/security.ftl">
 
 <@c.page>
-    <@n.navbar></@n.navbar>
+
+<aside class="profile-card" style="margin-top: 50px">
+    <div class="container center">
 <form method="post">
-    <h5 class="card-title center" style="margin-top: 50px; color: #009688" >Личный кабинет</h5>
-    <div class="container" >
+    <h5 class="card-title center" style= "color: #009688" >Личный кабинет</h5>
+    <#if isGuest>
+    <br>
+            <h5 class="center">${messageNotActiveEmail}</h5>
+    <div class="panel panel-info">
+        <div class="panel-body">
+            <div class="row">
+                <div class=" col-md-9 col-lg-9 ">
+                    <table class="table table-user-information">
+                        <tbody>
+                        <tr>
+                            <td>First name:</td>
+                            <td>${first_name!'Your name'}</td>
+                        </tr>
+                        <tr>
+                            <td>Last name:</td>
+                            <td>${last_name!'Your last name'}</td>
+                        </tr>
+                        <tr>
+                            <td>Old password:</td>
+                            <td>------------</td>
+                        </tr>
 
-        <div class="row" style="margin-top: 100px">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s5">
-                        <input id="firstName" name="firstName" type="text" value="${first_name!' '}">
-                        <label for="firstName">First Name</label>
-                    </div>
-                    <div class="input-field col s5">
-                        <input id="lastName" name="lastName" type="text" value="${last_name!' '}">
-                        <label for="lastName">Last Name</label>
-                    </div>
+                        <tr>
+                        <tr>
+                            <td>New Password:</td>
+                            <td>------------</td>
+                        </tr>
+                        <tr>
+                            <td>Password confirm:</td>
+                            <td>------------</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td>${userEmail !' '}</td>
+                        </tr>
+                        </td>
+
+                        </tr>
+
+                        </tbody>
+                    </table>
                 </div>
-                <div class="row">
-                    <div class="input-field col s5">
-                        <input id="oldPassword" name="oldPassword" type="password" >
-                        <label for="oldPassword">Old password</label>
-                    </div>
-                    <div class="input-field col s5">
-                        <input id="newPassword" name="newPassword" type="password" >
-                        <label for="password">New password</label>
-                    </div>
-                    <div class="input-field col s5">
-                        <input id="confirmPassword" name="confirmPassword" type="password" >
-                        <label for="password">Сonfirm Password</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s5">
-                        <input id="email" name="email" type="email" value="${email!' '}">
-                        <label for="email">Email</label>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
-        <input type="hidden" name="_csrf" value="${_csrf.token}" />
-        <button type="submit">Save</button>
+    </div>
+    </div>
+    <#else>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
 
+        <div class="panel panel-info">
+            <div class="panel-body">
+                <div class="row">
+                    <div class=" col-md-9 col-lg-9 ">
+                        <table class="table table-user-information">
+                            <tbody>
+                            <tr>
+                                <td>First name:</td>
+                                <td><input class="center" name="firstName" type="text" value="${first_name!' '}"></td>
+                            </tr>
+                            <tr>
+                                <td>Last name:</td>
+                                <td><input class="center" name="lastName" type="text" value="${last_name!' '}"</td>
+                            </tr>
+                            <tr>
+                                <td>Old password:</td>
+                                <td><input class="center" name="oldPassword" type="password" ></td>
+                            </tr>
+
+                            <tr>
+                            <tr>
+                                <td>New Password:</td>
+                                <td><input class="center" name="newPassword" type="password" ></td>
+                            </tr>
+                            <tr>
+                                <td>Password confirm:</td>
+                                <td><input class="center" name="confirmPassword" type="password" ></td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td> <input class="center" name="email" type="email" value="${email!' '}"></td>
+                            </tr>
+                            </td>
+
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                        <input type="submit" class="fadeIn fourth" value="Save" style="margin-top: 20px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </#if>
 </form>
-    <@f.footer></@f.footer>
+</div>
+</aside>
 </@c.page>

@@ -1,10 +1,8 @@
 <#import "parts/common.ftl" as c>
-<#import "parts/navbar.ftl" as n>
 <#import "parts/footer.ftl" as f>
 
 
 <@c.page>
-    <@n.navbar></@n.navbar>
 <main>
 
     <h3 style="color: #009688; margin-top: 100px; margin-left: 320px" >Оформление билета</h3>

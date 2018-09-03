@@ -48,26 +48,21 @@ public class UserService extends AbstractBaseService<User> {
         }
     }
 
-    public  void generateCode(UserRegistration user) {
+    public  void generateCode(User user) {
         String UUID = java.util.UUID.randomUUID().toString();
         user.setActivationCode(UUID);
 
     }
 
-    public void sendMessage(UserRegistration user) {
+    public void sendMessage(User user, String message, String titleMessage) {
 
-        if (!StringUtils.isEmpty(user.getEmail())) {   //В SpringUtils есть метод isEmpty который проверяет что строчки не равны null и непустые
-            String message = String.format(
-                    "Привет, %s \n" + "Доббро пожаловать на наш сайт One Click Bus. Пожалуйста активируйте ваш аккаунт по сслыке http://localhost:8080/activate/%s",
-                    user.getEmail(),
-                    user.getActivationCode()
-            );
-
-            mailService.send(user.getEmail(), "Activation Code", message);
+        if (!StringUtils.isEmpty(user.getEmail())) {   //В SpringUtils есть метод isEmpty который проверяет что строчки не равны null и непусты
+            
+            mailService.send(user.getEmail(), titleMessage, message);
         }
     }
 
-    public void sendMessagePasswordRecovery(User user) {
+    public void passwordRecovery(User user) {
 
         if (!StringUtils.isEmpty(user.getEmail())) {    //В SpringUtils есть метод isEmpty который проверяет что строчки не равны null и непустые
             String newPassword = UUID.randomUUID().toString().substring(24, 36);
@@ -78,7 +73,9 @@ public class UserService extends AbstractBaseService<User> {
                     user.getEmail().substring(0, user.getEmail().indexOf('@')),
                     newPassword
             );
-            mailService.send(user.getEmail(), "New password", message);
+            String titleMassage = "New password";
+
+            sendMessage(user, message, titleMassage);
         }
     }
 
