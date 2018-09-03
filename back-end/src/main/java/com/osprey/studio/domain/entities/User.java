@@ -36,7 +36,7 @@ public class User extends BaseEntity {
 
   //  @NotBlank(message = "errors.user.password.not-null")
 
-    @Column(name = "password", nullable = BUN_NULL, length = LENGTH)
+    @Column(name = "password",nullable = BUN_NULL, length = LENGTH)
     private String password;
 
     @Email(message = "errors.user.email.value.email_not_correct")

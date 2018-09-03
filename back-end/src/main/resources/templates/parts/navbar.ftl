@@ -10,6 +10,7 @@
             <li><a href="/public/info">Информация</a></li>
             <!--   <li><a href=/staff">Персонал</a></li> -->
             <li><a href="/profile">Личный кабинет</a></li>
+
                <li style="margin-left: 150px">
                    <div><#if user??>${name}<#else> Please, login</div>
                    <form action="/logout" method="post" >
@@ -17,6 +18,7 @@
                          <button class="waves-effect waves-light btn-large blue-grey" type="submit"><#if user??> Выйти <#else> Войти </#if> <i class="material-icons right">exit_to_app</i></button>
                    </form>
                </li>
+
             </#if>
         </ul>
         </div>

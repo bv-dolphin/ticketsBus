@@ -49,7 +49,7 @@ public class SecurityConfig {
         protected void configure(HttpSecurity http) throws Exception {
             http
                     .userDetailsService(detailsService)
-                    .antMatcher("/api/*")
+                    .antMatcher("/api/public/*")
                     .csrf()
                     .disable()
                     .headers()

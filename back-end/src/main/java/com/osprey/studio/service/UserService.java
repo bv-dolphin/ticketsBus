@@ -56,7 +56,6 @@ public class UserService extends AbstractBaseService<User> {
 
     public void sendMessage(UserRegistration user) {
 
-
         if (!StringUtils.isEmpty(user.getEmail())) {   //В SpringUtils есть метод isEmpty который проверяет что строчки не равны null и непустые
             String message = String.format(
                     "Привет, %s \n" + "Доббро пожаловать на наш сайт One Click Bus. Пожалуйста активируйте ваш аккаунт по сслыке http://localhost:8080/activate/%s",
@@ -65,6 +64,21 @@ public class UserService extends AbstractBaseService<User> {
             );
 
             mailService.send(user.getEmail(), "Activation Code", message);
+        }
+    }
+
+    public void sendMessagePasswordRecovery(User user) {
+
+        if (!StringUtils.isEmpty(user.getEmail())) {    //В SpringUtils есть метод isEmpty который проверяет что строчки не равны null и непустые
+            String newPassword = UUID.randomUUID().toString().substring(24, 36);
+            user.setPassword(passwordEncoder.encode(newPassword));
+            userRepository.save(user);
+            String message = String.format(
+                    "Привет, %s \n" + "вот твой новый пароль:  %s ",
+                    user.getEmail().substring(0, user.getEmail().indexOf('@')),
+                    newPassword
+            );
+            mailService.send(user.getEmail(), "New password", message);
         }
     }
 
@@ -82,6 +96,8 @@ public class UserService extends AbstractBaseService<User> {
             mailService.send(user.getEmail(), "Activation Code", message);
         }
     }*/
+
+
 
 
     public  boolean activateUser(String code) {
@@ -123,6 +139,7 @@ public class UserService extends AbstractBaseService<User> {
             }else
                 model.addAttribute
                         ("passwordMessage","changed password failed, please try again. ");
+              userRepository.save(user);
     }
 
     /**
@@ -137,11 +154,11 @@ public class UserService extends AbstractBaseService<User> {
      * Редактирование своего профиля(имя)
      */
     public boolean editFirstNameProfile(User user, String firstName){
-        if (StringUtils.isEmpty(firstName) || user.getFirstName().equals(firstName)) {
+        if (StringUtils.isEmpty(firstName)) {
             return false;
         }
         user.setFirstName(firstName);
-        userRepository.save(user);
+        //userRepository.save(user);
        // if (userRepository.findByFirstName(firstName) !=null){ }
         return true;
         }
@@ -149,11 +166,11 @@ public class UserService extends AbstractBaseService<User> {
      * Редактирование своего профиля(Фамилия)
      */
     public boolean editLastNameProfile(User user, String lastName){
-        if (StringUtils.isEmpty(lastName) && user.getLastName().equals(lastName)) {
+        if (StringUtils.isEmpty(lastName)) {
             return false;
         }
         user.setLastName(lastName);
-        userRepository.save(user);
+        //userRepository.save(user);
        // if (userRepository.findByLastName(lastName) !=null){ }
         return true;
     }
@@ -162,7 +179,7 @@ public class UserService extends AbstractBaseService<User> {
      * Редактирование своего профиля(почта)+ отправка новую активацию на почту
      */
     public boolean editEmailProfile(User user, String email){
-        if (!StringUtils.isEmpty(email)){
+        if (StringUtils.isEmpty(email)){
             return false;
         }
         String userEmail = user.getEmail();
@@ -175,7 +192,7 @@ public class UserService extends AbstractBaseService<User> {
           /* if (!StringUtils.isEmpty(email)) {
                user.setActivationCode(UUID.randomUUID().toString());
            }*/
-           userRepository.save(user);
+          // userRepository.save(user);
            return true;
        }
           /* if (userRepository.findByEmail(email).isPresent()){ // тут советуют использовать isPresent()
@@ -199,7 +216,7 @@ public class UserService extends AbstractBaseService<User> {
 
         if (isNewPassword && checkPassword){
             user.setPassword(passwordEncoder.encode(newPassword));
-            userRepository.save(user);
+           // userRepository.save(user);
             return true;
         }
         return false;
