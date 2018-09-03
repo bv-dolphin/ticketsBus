@@ -2,23 +2,19 @@ package com.osprey.studio.service;
 
 import com.osprey.studio.domain.entities.User;
 import com.osprey.studio.domain.enums.Role;
-import com.osprey.studio.domain.enums.State;
 import com.osprey.studio.domain.forms.UserRegistration;
 import com.osprey.studio.repository.UserRepository;
 import com.osprey.studio.repository.common.BaseRepository;
 import com.osprey.studio.service.common.AbstractBaseService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Collections;
 import java.util.Optional;
 import java.util.Set;
-import java.util.UUID;
 
 @Service
 public class UserService extends AbstractBaseService<User> {
