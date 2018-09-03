@@ -36,16 +36,15 @@ spring:
       url: jdbc:mysql://146.66.162.195:3306/bus
       username: root
       password: 12345
-
 ---
 spring:
     profiles:
         active: dev
     mail:
-        host: smtp.gmail.com
-        port: 465
-        username: ospreystudio2018@gmail.com
-        password: osprey2018
+        host: ${FT_MAIL_SMTP_HOST}
+        port: ${FT_MAIL_SMTP_PORT}
+        username: ${FT_MAIL_SMTP_USERNAME}
+        password: ${FT_MAIL_SMTP_PASSWORD}
         protocol: smtps
 
 
@@ -68,15 +67,15 @@ spring:
       username: sa
       password:
 #Monitoring
-  management:
-    endpoints:
-      web:
-        exposure:
-          include:
-            - beans
-            - health
-            - metrics
-            - env
+#  management:
+#    endpoints:
+#      web:
+#        exposure:
+#          include:
+#            - beans
+#            - health
+#            - metrics
+#            - env
 ---
 spring:
   profiles: test
