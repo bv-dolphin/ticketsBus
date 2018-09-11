@@ -14,12 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-import java.time.LocalDate;
-
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Locale;
 
 
 @Controller
@@ -44,10 +43,12 @@ public class MainController {
                           @RequestParam String arrival,
                           @RequestParam String departureTime,
                           Model model) {
-//
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         departureTime+=" 00:00:00";  // departureTime = departureTime + " 00:00:00";
         LocalDateTime date = LocalDateTime.parse(departureTime, formatter);
+
+
 
 
         List<BusFlight> busflights = busFlightService.search(departure, arrival, date);

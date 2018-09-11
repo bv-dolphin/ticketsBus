@@ -23,7 +23,7 @@
                 </div>
                 <div class="input-field col s2" style="margin-right: 50px">
                     <i class="material-icons prefix">today</i>
-                    <input id="icon_telephone" type="date" name="departureTime"> <!--class="datepicker"> -->
+                    <input id="icon_telephone" type="text" name="departureTime">
                     <label for="icon_telephone">Дата</label>
                 </div>
             </div>
@@ -56,24 +56,12 @@
 No buses
 </#if>
 
+  <script type="text/javascript">
+      $(function () {
+          $('#datetimepicker1').datetimepicker();
+      });
+  </script>
 
-</main>
-<!-- add jquery script -->
-
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.modal').modal();
-    });
-</script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.datepicker').datepicker();
-    });
-</script>
-<!--materialize script -->
-<script type="text/javascript" src="/static/js/jquery.min.js"></script>
-<script type="text/javascript" src="/static/js/materialize.min.js"></script>
 
 
     <@f.footer></@f.footer>
