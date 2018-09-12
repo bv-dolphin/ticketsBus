@@ -1,6 +1,4 @@
 <#import "parts/common.ftl" as c>
-<#import "parts/navbar.ftl" as n>
-<#import "parts/footer.ftl" as f>
 
 <@c.page>
 <main>
@@ -107,13 +105,4 @@
     });
 
 </script>
-
-<!--materialize script --->
-
-<script type="text/javascript" src="/static/js/jquery.min.js"></script>
-
-<script type="text/javascript" src="/static/js/materialize.min.js"></script>
-
-
-    <@f.footer></@f.footer>
 </@c.page>

@@ -59,6 +59,7 @@ public class RegistrationController {
 
         if (!signUpService.signUp(user)) {
             model.addAttribute("emailError", "Email exists");
+            return "registration";
         }
 
         if (bindingResult.hasErrors()) {
@@ -66,8 +67,9 @@ public class RegistrationController {
             model.mergeAttributes(errors);
             return "registration";
         }
-
-        return "redirect:/login";
+        model.addAttribute
+                ("sendMessageRegistration", "We send activation code on your email.");
+        return "login";
     }
 
     @GetMapping("/activate/{code}")
@@ -99,7 +101,6 @@ public class RegistrationController {
         if (request.getParameterMap().containsKey("error")) {
             model.addAttribute("error", true);
         }
-
         return "login";
     }
 

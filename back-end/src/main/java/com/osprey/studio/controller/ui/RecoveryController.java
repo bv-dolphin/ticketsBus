@@ -27,10 +27,10 @@ public class RecoveryController {
     public String recovery(
             @RequestParam String email,
             Model model
-    ) throws InterruptedException {
+    )  {
         if (StringUtils.isEmpty(email)){
             model.addAttribute("emailRecoveryError", "Email is not correct");
-            return "/recovery";
+            return "recovery";
         }
 
         if (userService.findByEmail(email).isPresent()){
@@ -38,10 +38,9 @@ public class RecoveryController {
             userService.passwordRecovery(user);
             model.addAttribute
                     ("sendMessageRecovery", "We send new password on your email.");
-             // Thread.sleep(5000);
             } else {
                 model.addAttribute("userRecoveryError", "This email not in base.");
-                return "/recovery";
+                return "recovery";
             }
 
         return "login";

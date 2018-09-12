@@ -19,6 +19,7 @@ import java.time.LocalDate;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 
@@ -48,7 +49,6 @@ public class MainController {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         departureTime+=" 00:00:00";  // departureTime = departureTime + " 00:00:00";
         LocalDateTime date = LocalDateTime.parse(departureTime, formatter);
-
 
         List<BusFlight> busflights = busFlightService.search(departure, arrival, date);
 

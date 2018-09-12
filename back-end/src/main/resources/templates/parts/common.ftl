@@ -1,7 +1,4 @@
 <#macro page>
-<#import "navbar.ftl" as nav>
-<!DOCTYPE html>
-<html lang="en">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,34 +9,48 @@
     <meta content="" name="description">
 
     <!-- Favicons -->
-    <link href="/static/images/logo.jpg" rel="icon">
+    <link href="../../static/img/logo.jpg" rel="icon">
 
-
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700" rel="stylesheet">
 
     <!-- Bootstrap CSS File -->
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-    <link href="/static/css/profile.css" rel="stylesheet">
-    <link href="/static/css/login.css" rel="stylesheet">
+    <link href="../../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="../../static/css/profile.css" rel="stylesheet">
+    <link href="../../static/css/login.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="../../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="../../static/css/style.css" rel="stylesheet">
+
 
     <!--icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
 </head>
-<@nav.navbar></@nav.navbar>
-<#nested >
-<body>
+<body data-spy="scroll" data-offset="0" data-target="#gn-menu">
+ <#include "navbar.ftl">
+<#nested>
+<!-- JavaScript Libraries -->
+<script src="../../static/lib/jquery/jquery-3.3.1.js"></script>
+<script src="../../static/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../static/lib/easing/easing.min.js"></script>
+<script src="../../static/lib/chart/Chart.js"></script>
+<script src="../../static/lib/classie/classie.js"></script>
+<script src="../../static/lib/gnmenu/gnmenu.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-
+<!-- Template Main Javascript File -->
+<script src="../../static/js/main.js"></script>
 </body>
 </html>
 </#macro>
+
+
 
