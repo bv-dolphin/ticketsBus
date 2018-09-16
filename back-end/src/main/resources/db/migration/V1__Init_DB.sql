@@ -33,8 +33,8 @@ create table bus_flight_tbl (
 
     create table bus_route_tbl (
        id bigint not null auto_increment,
-        arrival_time datetime not null,
-        departure_time datetime not null,
+        arrival_time time not null,
+        departure_time time not null,
         km integer not null,
         bus_flight_id bigint,
         bus_station_id bigint,
@@ -93,7 +93,7 @@ create table bus_flight_tbl (
 
     create table schedule_tbl (
        id bigint not null auto_increment,
-        depature_date datetime not null,
+        depature_date date not null,
         bus_id bigint,
         bus_route_id bigint,
         primary key (id),

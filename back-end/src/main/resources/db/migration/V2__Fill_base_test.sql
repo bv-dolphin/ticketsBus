@@ -33,16 +33,16 @@ insert into bus_landing_tbl (id, place_number, schedule_id, ticket_id) values (9
 insert into bus_landing_tbl (id, place_number, schedule_id, ticket_id) values (10, 10, 10, 10);
 
 
-insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (1, '2017-08-20 05:42:28', '2017-08-20 05:42:28', '1145', 1, 1);
-insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (2, '2017-08-20 05:42:28', '2017-08-20 05:42:28', '46', 2, 2);
-insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (3, '2017-08-20 05:42:28', '2017-08-20 05:42:28', '4', 3, 3);
-insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (4, '2017-08-20 05:42:28', '2017-08-20 05:42:28', '7973', 4, 4);
-insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (5, '2017-08-20 05:42:28', '2017-08-20 05:42:28', '2', 5, 5);
-insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (6, '2017-08-20 05:42:28', '2017-08-20 05:42:28', '50', 6, 6);
-insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (7, '2017-08-20 05:42:28', '2017-08-20 05:42:28', '65266', 7, 7);
-insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (8, '2017-08-20 05:42:28', '2017-08-20 05:42:28', '441', 8, 8);
-insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (9, '2017-08-20 05:42:28', '2017-08-20 05:42:28', '1899', 9, 9);
-insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (10, '2017-08-20 05:42:28', '2017-08-20 05:42:28', '68081', 10, 10);
+insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (1, '05:42:28', '05:45:28', '1145', 1, 1);
+insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (2, '06:42:28', '06:45:28', '46', 1, 2);
+insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (3, '06:42:28', '07:46:28', '4', 1, 3);
+insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (4, '05:42:28', '05:42:28', '7973', 4, 4);
+insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (5, '05:42:28', '05:42:28', '2', 5, 5);
+insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (6, '05:42:28', '05:42:28', '50', 6, 6);
+insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (7, '05:42:28', '05:42:28', '65266', 7, 7);
+insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (8, '05:42:28', '05:42:28', '441', 8, 8);
+insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (9, '05:42:28', '05:42:28', '1899', 9, 9);
+insert into bus_route_tbl (id, arrival_time, departure_time, km, bus_flight_id, bus_station_id) values (10, '05:42:28', '05:42:28', '68081', 10, 10);
 
 
 insert into bus_station_tbl (id, bus_station_name, latitude, longitude, street_name, city_id) values (1, 'Dabshots', 41.3575049, -8.3482785, '77 Miller Center', 1);
@@ -105,16 +105,16 @@ insert into region_tbl (id, region, country_id) values (9, 'California', 9);
 insert into region_tbl (id, region, country_id) values (10, 'Ohio', 10);
 
 
-insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (1, '2017-08-20 05:42:28', 1, 1);
-insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (2, '2017-12-26 02:58:02', 2, 2);
-insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (3, '2018-02-26 04:55:04', 3, 3);
-insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (4, '2017-12-10 22:15:57', 4, 4);
-insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (5, '2017-09-20 07:34:11', 5, 5);
-insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (6, '2018-05-19 03:58:12', 6, 6);
-insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (7, '2017-11-11 12:06:55', 7, 7);
-insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (8, '2017-08-17 11:04:30', 8, 8);
-insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (9, '2018-01-04 19:42:29', 9, 9);
-insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (10, '2018-03-23 09:07:58', 10, 10);
+insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (1, '2018-09-20', 1, 1);
+insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (2, '2017-12-26', 2, 2);
+insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (3, '2018-02-26', 3, 3);
+insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (4, '2017-12-10', 4, 4);
+insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (5, '2017-09-20', 5, 5);
+insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (6, '2018-05-19', 6, 6);
+insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (7, '2017-11-11', 7, 7);
+insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (8, '2017-08-17', 8, 8);
+insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (9, '2018-01-04', 9, 9);
+insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (10, '2018-03-23', 10, 10);
 
 insert into users_tbl (id, active, email, fist_name, last_name, password, state_enum) values (1, true, 'bmacconneely0@amazon.co.uk', 'Benita', 'MacConneely', '5C8AmwKaltb', 'ACTIVE');
 insert into users_tbl (id, active, email, fist_name, last_name, password, state_enum) values (2, true, 'mjaniak1@drupal.org', 'Mortie', 'Janiak', '0UjHMD3', 'ACTIVE');

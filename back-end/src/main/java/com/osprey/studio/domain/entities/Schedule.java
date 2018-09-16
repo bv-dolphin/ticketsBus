@@ -7,7 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -19,7 +19,7 @@ public class Schedule extends BaseEntity {
 
 	@NotNull
 	@Column(name = "depature_date", nullable = false)
-	private LocalDateTime departureDate;
+	private LocalDate departureDate;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "bus_route_id")

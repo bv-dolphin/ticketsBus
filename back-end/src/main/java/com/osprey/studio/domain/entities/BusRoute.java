@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 
 @Getter
@@ -20,11 +21,11 @@ public class BusRoute extends BaseEntity {
 
     @NotNull
     @Column(name = "departure_time", nullable = false)
-    private LocalDateTime departureTime;
+    private LocalTime departureTime;
 
     @NotNull
     @Column(name = "arrival_time", nullable = false)
-    private LocalDateTime arrivalTime;
+    private LocalTime arrivalTime;
 
     @NotNull
     @Column(name = "km", nullable = true)
