@@ -1,9 +1,6 @@
 package com.osprey.studio.domain.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -17,6 +14,7 @@ import java.time.LocalTime;
 @Table(name = "bus_route_tbl")
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class BusRoute extends BaseEntity {
 
     @NotNull

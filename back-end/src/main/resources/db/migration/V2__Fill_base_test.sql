@@ -106,8 +106,8 @@ insert into region_tbl (id, region, country_id) values (10, 'Ohio', 10);
 
 
 insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (1, '2018-09-20', 1, 1);
-insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (2, '2017-12-26', 2, 2);
-insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (3, '2018-02-26', 3, 3);
+insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (2, '2018-09-20', 1, 2);
+insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (3, '2018-09-20', 1, 3);
 insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (4, '2017-12-10', 4, 4);
 insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (5, '2017-09-20', 5, 5);
 insert into schedule_tbl (id, depature_date, bus_id, bus_route_id) values (6, '2018-05-19', 6, 6);
