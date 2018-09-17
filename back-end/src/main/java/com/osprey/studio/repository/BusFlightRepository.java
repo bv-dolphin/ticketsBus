@@ -12,4 +12,5 @@ public interface BusFlightRepository extends BaseRepository<BusFlight, Long> {
 
     List<BusFlight> findByDepartureAndArrivalAndDepartureTime(String departure, String arrival, LocalDateTime departureTime);
     List<BusFlight> findByDepartureAndArrivalAndDepartureTimeBetween(String departure, String arrival, LocalDateTime dateone, LocalDateTime datetwo);
+    List<BusFlight> findAllById(Long idFlights);
 }

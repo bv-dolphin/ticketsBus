@@ -12,9 +12,10 @@ import java.util.Comparator;
 public class ScheduleRouteDateComporator implements Comparator<Schedule> {
     @Override
     public int compare(Schedule a, Schedule b) {
-        LocalDateTime localDateTimeA = LocalDateTime.of(b.getDepartureDate(),b.getBusRoute().getArrivalTime());
+        LocalDateTime localDateTimeA = LocalDateTime.of(a.getDepartureDate(),a.getBusRoute().getArrivalTime());
         LocalDateTime localDateTimeB = LocalDateTime.of(b.getDepartureDate(),b.getBusRoute().getArrivalTime());
-       int compare =localDateTimeA.compareTo(localDateTimeB);
+       int compare = localDateTimeA.compareTo(localDateTimeB);
         return compare;
     }
+
 }
