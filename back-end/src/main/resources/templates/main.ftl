@@ -4,7 +4,7 @@
   <div id="headerwrap">
       <div class="container">
           <div class="col-lg-8">
-              <h1>Osprey bus studio</h1>
+              <h1>lern and pass on</h1>
           </div>
           <div class="col-lg-4">
           </div>
@@ -16,45 +16,65 @@
   <!-- ABOUT SECTION -->
   <section id="about" name="about"></section>
   <div class="container about">
-      <div class="col-lg-6 col-lg-offset-3">
+      <#--<div class="col-lg-6 col-lg-offset-3">-->
           <h3>Найти Автобус</h3>
           <h5>---------------------</h5>
           <hr>
           <br>
           <br>
           <br>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+          <!-- Optional theme -->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-          <div class="container">
-              <br/>
-              <div class="row justify-content-center">
-                  <div class="col-12 col-md-10 col-lg-8">
-                      <form class="card card-sm">
-                          <div class="card-body row no-gutters align-items-center">
-                              <div class="col-auto">
-                                  <i class="fas fa-search h4 text-body"></i>
-                              </div>
+
                               <!--end of col-->
-                              <div class="col">
-                                  <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords">
-                              </div>
-                              <!--end of col-->
-                              <div class="col-auto">
-                                  <button class="btn btn-lg btn-success" type="submit">Search</button>
-                              </div>
-                              <!--end of col-->
-                          </div>
-                      </form>
+                              <#--<div class="col">-->
+                                  <#--<input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords">-->
+                              <#--</div>-->
+          <form action="/public/search" method="get">
+              <div class="form-row">
+                  <div class="col-sm-2">
+                      <input type="text" class="form-control"  name="departure" placeholder="Откуда">
                   </div>
-                  <!--end of col-->
+
+                  <div class="col-sm-2">
+                      <input type="text" class="form-control" name="arrival" placeholder="Куда">
+                  </div>
+
+                  <div class='col-sm-3'>
+                      <div class='input-group date' id='datetimepicker3' >
+                          <input type='text' class="form-control" name="departureTime" />
+                          <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                      </div>
+                  </div>
+
+                  <div>
+                      <button type="submit" class="btn btn-primary">Искать</button>
+                  </div>
               </div>
-          </div>
+          </form>
+
+
           <hr>
           <br>
           <br>
           <br>
       </div>
       <!-- /col-lg-6 -->
-  </div>
+      </div>
   <!-- /container -->
 
   <section id="portfolio" name="portfolio"></section>
@@ -357,7 +377,7 @@
               &copy; Copyrights <strong>Osprey studio</strong>. All Rights Reserved
           </p>
           <div class="credits">
-              Created by <a href="#Iliya Ksen">Iliya Ksen</a>
+              Created by <a href="#">learn and pass on</a>
           </div>
       </div>
   </div>

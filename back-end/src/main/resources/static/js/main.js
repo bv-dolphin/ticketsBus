@@ -64,4 +64,11 @@ jQuery(document).ready(function( $ ) {
 		var myDoughnut = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutData);
 	}
 
+
+        $(function () {
+            $('#datetimepicker3').datetimepicker();
+        });
+
+
 });
+

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -35,19 +36,19 @@ public class MainController {
         this.busFlightService = busFlightService;
     }
 
-    @GetMapping ("/main")
+    @GetMapping("/main")
     public String main() {
         return "main";
     }
 
-    @GetMapping("/main/search")
-    public String search (@RequestParam String departure,
-                          @RequestParam String arrival,
-                          @RequestParam String departureTime,
-                          Model model) {
+    @RequestMapping("/main/search")
+    public String search(@RequestParam String departure,
+                         @RequestParam String arrival,
+                         @RequestParam String departureTime,
+                         Model model) {
 //
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        departureTime+=" 00:00:00";  // departureTime = departureTime + " 00:00:00";
+        departureTime += " 00:00:00";  // departureTime = departureTime + " 00:00:00";
         LocalDateTime date = LocalDateTime.parse(departureTime, formatter);
 
         List<BusFlight> busflights = busFlightService.search(departure, arrival, date);
@@ -66,17 +67,53 @@ public class MainController {
     }
 
     @GetMapping("/info")
-    public String info() {return "info"; }
+    public String info() {
+        return "info";
+    }
 
     @GetMapping("/ticket")
-    public String ticket() {return "ticket"; }
+    public String ticket() {
+        return "ticket";
+    }
 
     @GetMapping("/contacts")
-    public String contacts() {return "contacts"; }
+    public String contacts() {
+        return "contacts";
+    }
 
     @GetMapping("/test")
     public String test() {
         return "test";
-        }
     }
 
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public String sear() {
+        return "search";
+    }
+
+    @RequestMapping(name = "/search", method = RequestMethod.GET)
+    public String sear(@RequestParam String departure,
+                       @RequestParam String arrival,
+                       @RequestParam String departureTime,
+                       Model model) {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        departureTime += " 00:00:00";  // departureTime = departureTime + " 00:00:00";
+        LocalDateTime date = LocalDateTime.parse(departureTime, formatter);
+
+        List<BusFlight> busflights = busFlightService.search(departure, arrival, date);
+
+//
+        if (busflights != null) {
+            model.addAttribute("busflights", busflights);
+        } else {
+            model.addAttribute("busflightsError", "no flights");
+        }
+//        if (departure !=null && !departure.isEmpty() || arrival !=null && !arrival.isEmpty() ) {
+//            model.addAttribute("busflights", busFlightService.search(departure, arrival));
+//        }
+        return "search";
+    }
+
+}

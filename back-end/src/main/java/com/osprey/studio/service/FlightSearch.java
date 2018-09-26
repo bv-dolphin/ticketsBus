@@ -4,6 +4,7 @@ import com.osprey.studio.domain.entities.BusRoute;
 import com.osprey.studio.domain.entities.Schedule;
 import com.osprey.studio.repository.ScheduleRepositories;
 import com.osprey.studio.service.Util.ScheduleRouteDateComporator;
+import com.sun.xml.internal.bind.v2.TODO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,9 @@ public class FlightSearch {
         scheduleList = getScheduleBDonData(date, idStantionFirst, idStantionTho);
         return scheduleList;
     }
+    fad
+    gbae\fjvu9svylKdkpv'
+            '
 
     /**
      * Вытягивает с бд по дате, станции откуда, станции куда. Убирает слиста если у станции откуда и куда не 1 рейс.
@@ -39,7 +43,7 @@ public class FlightSearch {
                 boolean compareStantion = scheduleList.get(j).getBusRoute().getBusStation().getId() == busRouteConst.getBusStation().getId();
                 boolean compareFlight = scheduleList.get(j).getBusRoute().getBusFlight().getId() == busRouteConst.getBusFlight().getId();
                 boolean compareList = false;
-                if (scheduleListTho != null) {
+                if (scheduleListTho != null) { //TODO зачем проверка? если на 34 строчке существует объект
                     if (scheduleListTho.contains(scheduleList.get(j))) {
                         compareList = true;
                     }
