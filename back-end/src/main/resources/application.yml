@@ -18,7 +18,7 @@ jwt:
 ---
 #порт по умолчанию;
 server:
-  port: 8585
+  port: 8080
 ---
 spring:
   profiles: dev
@@ -34,7 +34,7 @@ spring:
   datasource:
       driverClassName: com.mysql.jdbc.Driver
 
-      url: jdbc:mysql://146.66.162.195:3306/bus
+      url: jdbc:mysql://localhost:3306/bus2
       username: root
       password: 12345
 
