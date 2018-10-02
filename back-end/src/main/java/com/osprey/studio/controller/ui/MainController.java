@@ -4,8 +4,6 @@ package com.osprey.studio.controller.ui;
 import com.osprey.studio.domain.entities.BusFlight;
 import com.osprey.studio.service.BusFlightService;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,13 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-import java.time.LocalDate;
-
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
 
 
@@ -41,30 +34,58 @@ public class MainController {
         return "main";
     }
 
-    @RequestMapping("/main/search")
-    public String search(@RequestParam String departure,
-                         @RequestParam String arrival,
-                         @RequestParam String departureTime,
-                         Model model) {
-//
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        departureTime += " 00:00:00";  // departureTime = departureTime + " 00:00:00";
-        LocalDateTime date = LocalDateTime.parse(departureTime, formatter);
 
-        List<BusFlight> busflights = busFlightService.search(departure, arrival, date);
-
+//    @RequestMapping(value = "/search", method = RequestMethod.GET)
+//    public String search(@RequestParam String departure,
+//                         @RequestParam String arrival,
+//                         @RequestParam String departureTime,
+//                         Model model) {
+////
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//        departureTime += " 00:00:00";  // departureTime = departureTime + " 00:00:00";
+//        LocalDateTime date = LocalDateTime.parse(departureTime, formatter);
 //
-        if (busflights != null) {
-            model.addAttribute("busflights", busflights);
-        } else {
-            model.addAttribute("busflightsError", "no flights");
-        }
-//        if (departure !=null && !departure.isEmpty() || arrival !=null && !arrival.isEmpty() ) {
-//            model.addAttribute("busflights", busFlightService.search(departure, arrival));
+//        List<BusFlight> busflights = busFlightService.search(departure, arrival, date);
+//
+//
+//        if (busflights != null) {
+//            model.addAttribute("busflights", busflights);
+//        } else {
+//            model.addAttribute("busflightsError", "no flights");
 //        }
+////        if (departure !=null && !departure.isEmpty() || arrival !=null && !arrival.isEmpty() ) {
+////            model.addAttribute("busflights", busFlightService.search(departure, arrival));
+////        }
+//
+//        return "search";
+//    }
 
-        return "main";
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public String search(
+//            @RequestParam  String departure,
+//            @RequestParam  String arrival,
+//            @RequestParam  String departureTime,
+            Model model) {
+
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//        departureTime += " 00:00:00";  // departureTime = departureTime + " 00:00:00";
+
+//        LocalDateTime date = LocalDateTime.parse(departureTime);
+
+        Iterable<BusFlight> selects = busFlightService.getAll();
+//        List<BusFlight> busflights = busFlightService.search(departure, arrival, date);
+
+        if (selects != null ) {
+
+            model.addAttribute("selects", selects);
+
+//            model.addAttribute("busflights", busflights);
+        } else {
+            model.addAttribute("selects", "no flights");
+        }
+        return "search";
     }
+
 
     @GetMapping("/info")
     public String info() {
@@ -82,38 +103,30 @@ public class MainController {
     }
 
     @GetMapping("/test")
-    public String test() {
+    public String test(
+//        @RequestParam  String departure,
+//            @RequestParam  String arrival,
+//            @RequestParam  String departureTime,
+                Model model) {
+
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//        departureTime += " 00:00:00";  // departureTime = departureTime + " 00:00:00";
+
+//        LocalDateTime date = LocalDateTime.parse(departureTime);
+
+            Iterable<BusFlight> selects = busFlightService.getAll();
+//        List<BusFlight> busflights = busFlightService.search(departure, arrival, date);
+
+            if (selects != null ) {
+
+                model.addAttribute("selects", selects);
+
+//            model.addAttribute("busflights", busflights);
+            } else {
+                model.addAttribute("selects", "no flights");
+            }
         return "test";
     }
 
-
-    @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public String sear() {
-        return "search";
-    }
-
-    @RequestMapping(name = "/search", method = RequestMethod.GET)
-    public String sear(@RequestParam String departure,
-                       @RequestParam String arrival,
-                       @RequestParam String departureTime,
-                       Model model) {
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        departureTime += " 00:00:00";  // departureTime = departureTime + " 00:00:00";
-        LocalDateTime date = LocalDateTime.parse(departureTime, formatter);
-
-        List<BusFlight> busflights = busFlightService.search(departure, arrival, date);
-
-//
-        if (busflights != null) {
-            model.addAttribute("busflights", busflights);
-        } else {
-            model.addAttribute("busflightsError", "no flights");
-        }
-//        if (departure !=null && !departure.isEmpty() || arrival !=null && !arrival.isEmpty() ) {
-//            model.addAttribute("busflights", busFlightService.search(departure, arrival));
-//        }
-        return "search";
-    }
 
 }

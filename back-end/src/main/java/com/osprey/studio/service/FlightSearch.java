@@ -26,9 +26,6 @@ public class FlightSearch {
         scheduleList = getScheduleBDonData(date, idStantionFirst, idStantionTho);
         return scheduleList;
     }
-    fad
-    gbae\fjvu9svylKdkpv'
-            '
 
     /**
      * Вытягивает с бд по дате, станции откуда, станции куда. Убирает слиста если у станции откуда и куда не 1 рейс.

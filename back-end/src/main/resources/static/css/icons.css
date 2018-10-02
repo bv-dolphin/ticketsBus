@@ -1,0 +1,216 @@
+body{
+    background:#37353a;
+}
+
+.wrapper {
+    width:704px;
+    margin: 0 auto;
+}
+
+.icon {
+    width:25px;
+    height:25px;
+    float:left;
+    position:relative;
+    border:1px solid rgba(0,0,0,.15);
+    box-shadow: inset -1px -1px 0px 0px rgba(255,255,255,0.04);
+    border-left:0;
+    border-top:0;
+}
+
+/****************** calendar ****************/
+
+.calendar {
+    width:108px;
+    height:96px;
+    background:#eeecdf;
+    position:absolute;
+    left:50%;
+    margin-left: 532px;
+    top:50%;
+    margin-top: 0;
+    border-radius:6px;
+    box-shadow: 0 2px 0 0px rgba(0,0,0,0.25), inset 0 1px 0 0 rgba(255,255,255,0.2);
+    font-family:Arial, helvetica, 'sans';
+    font-size:45px;
+    line-height:112px;
+    text-align:center;
+}
+
+.calendar:after {
+    content:"";
+    width:108px;
+    height:27px;
+    box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.2);
+    background:#d64646;
+    position:absolute;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    top:0; left:0;
+}
+
+.calendar:before {
+    content:"";
+    width:0;
+    height:0;
+    border-bottom: 23px solid #37353a;
+    border-left: 23px solid transparent;
+    position:absolute;
+    bottom:-2px;
+    right:0;
+}
+
+.calendar .flip {
+    position:absolute;
+    right:0;
+    bottom:0;
+    width: 0;
+    height: 0;
+    border-top: 23px solid #fff;
+    border-right: 23px solid transparent;
+}
+.calendar .flip:after {
+    content:"";
+    width:0;
+    height:0;
+    border-bottom: 23px solid rgba(0,0,0,0.25);
+    border-left: 23px solid transparent;
+    position:absolute;
+    top:-23px;
+    right:0;
+}
+
+
+.calendar .holes {
+    width:8px;
+    height:8px;
+    position:absolute;
+    border-radius:50%;
+    background:#37353a;
+    left:22px;
+    top:10px;
+    z-index:10;
+    box-shadow: inset 0 2px 0 0px rgba(0,0,0,0.25), 0 1px 0 0 rgba(255,255,255,0.2);
+}
+
+.calendar .holes:after {
+    content:"";
+    width:8px;
+    height:8px;
+    position:absolute;
+    border-radius:50%;
+    background:#37353a;
+    left:56px;
+    box-shadow: inset 0 2px 0 0px rgba(0,0,0,0.25), 0 1px 0 0 rgba(255,255,255,0.2);
+}
+
+
+
+/* ANIMATIONS */
+
+.icon {
+  transition:transform 0.5s;
+}
+.icon:hover {
+  transform:translateY(-5px);
+}
+
+.img {
+    margin-left: 35px;
+    margin-top: 45px;
+}
+.note {
+    /*position: relative;*/
+    width: 80px;
+    height: 105px;
+    margin: auto 250px;
+    color: #2c3e50;
+    background: #97C02F;
+    overflow: hidden;
+    float: left;
+    margin-bottom: 50px;
+}
+.note:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 16px 16px 0;
+    border-style: solid;
+    border-color: #2c3e50 #2c3e50 #658E15 #658E15;
+    background: #658E15;
+    /*-webkit-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+      -moz-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+      box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);*/
+
+    display: block;
+    width: 0;
+    /* Firefox 3.0 damage limitation */
+
+}
+.note.rounded {
+    -webkit-border-radius: 5px 0 5px 5px;
+    -moz-border-radius: 5px 0 5px 5px;
+    border-radius: 5px 0 5px 5px;
+}
+.note.rounded:before {
+    border-width: 12px;
+    border-color: #2c3e50 #2c3e50 transparent transparent;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius: 0 0 0 5px;
+    border-radius: 0 0 0 5px;
+}
+.note.red {
+    background: #e74c3c;
+}
+.note.red:before {
+    border-color: #2c3e50 #2c3e50 #c0392b #c0392b;
+    background: #1f1f1f;
+}
+.note.yellow {
+    background: #f1c40f;
+}
+.note.yellow:before {
+    border-color: #2c3e50 #2c3e50 #f39c12 #f39c12;
+    background: #f39c12;
+}
+
+h3 {font-family: 'Montez', cursive;
+    font-size: 50px;
+    color: #F39C12 ; margin: auto -650px; margin-top: 150px}
+
+.button_group > div{width: 200px; float: left; margin-left: 10px;}
+
+/* #Turquoise Flat Button
+==================================================*/
+.turquoise-flat-button {
+    /*position: relative;*/
+    /*vertical-align: top;*/
+    /*position: fixed;*/
+    margin: auto -688px;
+    margin-top: 50px;
+    width: 56%;
+    height: 60px;
+    padding: 0;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background: #1abc9c;
+    border: 0;
+    border-bottom: 2px solid #12ab8d;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 -2px #12ab8d;
+    box-shadow: inset 0 -2px #12ab8d;
+}
+.turquoise-flat-button:active {
+    top: 1px;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+
+
